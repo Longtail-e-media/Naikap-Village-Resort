@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  },
+  "name": "naikapvillageresort",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./frontend/css/style.css -o ./dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  }
+}

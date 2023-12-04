@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="dist/output.css" />
+  </head>
+  <body>
+    <!-- ====== Testimonials Section -->
+    <section class="container mx-auto mt-20 swiper mySwiper">
+      <div class="mb-16 swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="p-4 text-gray-800 rounded-lg shadow-md">
+            <div class="mb-2">
+              <p class="mb-2 text-center text-gray-600">
+                " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Similique sapiente iusto esse. "
+              </p>
+              <div class="flex flex-col items-center justify-center">
+                <div
+                  class="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full"
+                >
+                  <img
+                    src="https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419__340.jpg"
+                    alt="img"
+                    class="object-cover object-center w-full h-full"
+                  />
+                </div>
+                <h5 class="font-bold text-indigo-600">John Doe</h5>
+                <p class="text-sm text-gray-600">CEO / Founder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="p-4 text-gray-800 rounded-lg shadow-md">
+            <div class="mb-2">
+              <p class="mb-2 text-center text-gray-600">
+                " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Similique sapiente iusto esse. "
+              </p>
+              <div class="flex flex-col items-center justify-center">
+                <div
+                  class="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full"
+                >
+                  <img
+                    src="https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419__340.jpg"
+                    alt="img"
+                    class="object-cover object-center w-full h-full"
+                  />
+                </div>
+                <h5 class="font-bold text-indigo-600">John Doe</h5>
+                <p class="text-sm text-gray-600">CEO / Founder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="p-4 text-gray-800 rounded-lg shadow-md">
+            <div class="mb-2">
+              <p class="mb-2 text-center text-gray-600">
+                " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Similique sapiente iusto esse. "
+              </p>
+              <div class="flex flex-col items-center justify-center">
+                <div
+                  class="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full"
+                >
+                  <img
+                    src="https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419__340.jpg"
+                    alt="img"
+                    class="object-cover object-center w-full h-full"
+                  />
+                </div>
+                <h5 class="font-bold text-indigo-600">John Doe</h5>
+                <p class="text-sm text-gray-600">CEO / Founder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="p-4 text-gray-800 rounded-lg shadow-md">
+            <div class="mb-2">
+              <p class="mb-2 text-center text-gray-600">
+                " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Similique sapiente iusto esse. "
+              </p>
+              <div class="flex flex-col items-center justify-center">
+                <div
+                  class="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full"
+                >
+                  <img
+                    src="https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419__340.jpg"
+                    alt="img"
+                    class="object-cover object-center w-full h-full"
+                  />
+                </div>
+                <h5 class="font-bold text-indigo-600">John Doe</h5>
+                <p class="text-sm text-gray-600">CEO / Founder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        grid: {
+          rows: 1,
+        },
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          // When window width is <= 640px (mobile), set slidesPerView to 1
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
