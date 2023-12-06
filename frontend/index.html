@@ -3,19 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
-    <!-- style it later on and remove -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.0.4/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <title>Naikap Village Resort</title>
+    <script src="./js/app.js"></script>
 
     <!-- font awesome cdn -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <!-- carousel -->
     <link
@@ -35,183 +32,222 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="dist/output.css" />
-  </head>
-  <body>
-    <header class="flex">
-      <div
-        class="container mx-auto bg-red-500 flex items-center justify-between p-2"
-      >
-        <a href="">Call</a>
-        <a href="">Email</a>
-      </div>
-    </header>
 
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <style>
+      body {
+        background-color: #6b7e42;
+      }
+      .bg-overlay::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- <header class="flex">
       <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+        class="container mx-auto flex items-center justify-between flex-col md:flex-row p-2 md:p-4 z-50"
       >
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            class="h-8"
-            alt="Flowbite Logo"
-          />
-          <span
-            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-            >Flowbite</span
-          >
-        </a>
-        <button
-          data-collapse-toggle="navbar-dropdown"
-          type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-dropdown"
-          aria-expanded="false"
+        <a href=""><i class="fa-solid fa-phone"></i> +977-1-5916348</a>
+        <a href=""
+          ><i class="fa-solid fa-envelope"></i> info@naikapvillageresort.com</a
         >
-          <span class="sr-only">Open main menu</span>
+      </div>
+    </header> -->
+
+    <nav
+      class="fixed top-0 w-full px-4 py-4 flex justify-between items-center bg-black/20 backdrop-blur-md z-50"
+    >
+      <a class="" href="#">
+        <img
+          src="https://naikapvillageresort.com/template/web/images/logo.png"
+          alt="Naikap Village Resort"
+          class="logo absolute top-0"
+        />
+      </a>
+      <div class="lg:hidden">
+        <button class="navbar-burger flex items-center text-blue-600 p-3">
           <svg
-            class="w-5 h-5"
-            aria-hidden="true"
+            class="block h-4 w-4 fill-current"
+            viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
+            <title>Mobile menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
           </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-          <ul
-            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+      </div>
+      <ul
+        class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
+      >
+        <li>
+          <a
+            class="text-sm text-[#f5f5dc] hover:bg-[#ef4c23] py-2 px-3 rounded-lg bg-[#6b7e42] transition-all duration-200 ease-in-out"
+            href="#"
+            onclick="handleNavLinkClick(this)"
+            >Home</a
           >
-            <li>
+        </li>
+
+        <li>
+          <a
+            class="text-sm text-[#f5f5dc] hover:bg-[#ef4c23] py-2 px-3 rounded-lg transition-all duration-200 ease-in-out"
+            href="#"
+            onclick="handleNavLinkClick(this)"
+            >About Us</a
+          >
+        </li>
+
+        <li>
+          <a
+            class="text-sm text-[#f5f5dc] hover:bg-[#ef4c23] py-2 px-3 rounded-lg transition-all duration-200 ease-in-out"
+            href="#"
+            onclick="handleNavLinkClick(this)"
+            >Accommodation</a
+          >
+        </li>
+
+        <li>
+          <a
+            class="text-sm text-[#f5f5dc] hover:bg-[#ef4c23] py-2 px-3 rounded-lg transition-all duration-200 ease-in-out"
+            href="#"
+            onclick="handleNavLinkClick(this)"
+            >Dining</a
+          >
+        </li>
+
+        <li>
+          <a
+            class="text-sm text-[#f5f5dc] hover:bg-[#ef4c23] py-2 px-3 rounded-lg transition-all duration-200 ease-in-out"
+            href="#"
+            onclick="handleNavLinkClick(this)"
+            >Gallery</a
+          >
+        </li>
+        <li>
+          <a
+            class="text-sm text-[#f5f5dc] hover:bg-[#ef4c23] py-2 px-3 rounded-lg transition-all duration-200 ease-in-out"
+            href="#"
+            onclick="handleNavLinkClick(this)"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <a
+        class="hidden lg:inline-block py-2 px-6 bg-[#ef4c23] hover:bg-[#6b7e42] text-sm text-[#f5f5dc] font-bold rounded-lg transition duration-200"
+        href="#"
+        ><i class="fa-solid fa-calendar-check text-md mr-2"></i>Book now</a
+      >
+    </nav>
+    <div class="navbar-menu relative z-50 hidden bg-[#ef4c23]">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-blue-950 border-r overflow-y-auto"
+      >
+        <div class="flex items-center mb-8">
+          <a class="" href="#">
+            <img
+              src="https://naikapvillageresort.com/template/web/images/logo.png"
+              alt="Naikap Village Resort"
+            />
+          </a>
+          <button class="navbar-close">
+            <svg
+              class="h-6 w-6 text-[#f5f5dc] cursor-pointer hover:text-gray-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-1">
               <a
+                class="block p-4 text-sm font-semibold text-[#f5f5dc] hover:bg-blue-50 hover:text-blue-600 rounded bg-[#ef4c23]"
                 href="#"
-                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                aria-current="page"
+                onclick="handleNavLinkClick(this)"
                 >Home</a
               >
             </li>
-            <li>
+            <li class="mb-1">
               <a
-                href="./about.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block p-4 text-sm font-semibold text-[#f5f5dc] hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="#"
+                onclick="handleNavLinkClick(this)"
                 >About Us</a
               >
             </li>
-            <li>
-              <button
-                id="dropdownNavbarLink"
-                data-dropdown-toggle="dropdownNavbar"
-                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
-              >
-                Dropdown
-                <svg
-                  class="w-2.5 h-2.5 ms-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
-              <!-- Dropdown menu -->
-              <div
-                id="dropdownNavbar"
-                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-              >
-                <ul
-                  class="py-2 text-sm text-gray-700 dark:text-gray-400"
-                  aria-labelledby="dropdownLargeButton"
-                >
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >Dashboard</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >Settings</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >Earnings</a
-                    >
-                  </li>
-                </ul>
-                <div class="py-1">
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >Dining</a
-                  >
-                </div>
-              </div>
-            </li>
-            <li>
+            <li class="mb-1">
               <a
+                class="block p-4 text-sm font-semibold text-[#f5f5dc] hover:bg-blue-50 hover:text-blue-600 rounded"
                 href="#"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                onclick="handleNavLinkClick(this)"
                 >Accommodation</a
               >
             </li>
-            <li>
+            <li class="mb-1">
               <a
+                class="block p-4 text-sm font-semibold text-[#f5f5dc] hover:bg-blue-50 hover:text-blue-600 rounded"
                 href="#"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Dining</a
               >
             </li>
-            <li>
+            <li class="mb-1">
               <a
-                href="./gallery.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block p-4 text-sm font-semibold text-[#f5f5dc] hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="#"
                 >Gallery</a
               >
             </li>
-            <li>
+            <li class="mb-1">
               <a
-                href="./contact.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block p-4 text-sm font-semibold text-[#f5f5dc] hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="#"
+                onclick="handleNavLinkClick(this)"
                 >Contact</a
               >
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
+        <div class="mt-auto">
+          <div class="pt-6">
+            <a
+              class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-[#f5f5dc] font-semibold bg-[#f5f5dc] hover:bg-[#f5f5dc] rounded-xl"
+              href="#"
+              >BOOK NOW</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
 
     <!-- ====== Hero Section -->
 
-    <section>
+    <section class="overflow-hidden">
       <div id="main-slider" class="owl-carousel owl-theme relative">
         <div
-          class="relative w-full bg-[url('https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg')] bg-no-repeat bg-cover bg-center"
+          class="bg-overlay relative w-full h-screen bg-[url('https://naikapvillageresort.com/images/slideshow/1525931308.jpg')] bg-no-repeat bg-cover bg-center"
         >
           <div
-            class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
+            class="grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
           >
             <!-- Content -->
-            <div class="flex flex-col gap-5 md:gap-8">
+            <!-- <div class="flex flex-col gap-5 md:gap-8">
               <div class="flex flex-col gap-4">
                 <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold">
                   Mukunda - Shotru - Trailer
@@ -244,17 +280,17 @@
                   <i class="fa-solid fa-share-nodes"></i>
                 </button>
               </div>
-            </div>
+            </div> -->
             <!-- End Content -->
           </div>
         </div>
         <div
-          class="relative w-full bg-[url('https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg')] bg-no-repeat bg-cover bg-center"
+          class="relative w-full h-screen bg-[url('https://naikapvillageresort.com/images/slideshow/1525931292.jpg')] bg-no-repeat bg-cover bg-center"
         >
           <div
             class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
           >
-            <div class="flex flex-col gap-5 md:gap-8">
+            <!-- <div class="flex flex-col gap-5 md:gap-8">
               <div class="flex flex-col gap-4">
                 <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold">
                   Mukunda - Shotru - Trailer
@@ -287,16 +323,16 @@
                   <i class="fa-solid fa-share-nodes"></i>
                 </button>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div
-          class="relative w-full bg-[url('https://cdn.pixabay.com/photo/2016/08/11/23/48/mountains-1587287_1280.jpg')] bg-no-repeat bg-cover bg-center"
+          class="relative w-full h-screen bg-[url('https://naikapvillageresort.com/images/gallery/galleryimages/1394519762.jpg')] bg-no-repeat bg-cover bg-center"
         >
           <div
             class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
           >
-            <div class="flex flex-col gap-5 md:gap-8">
+            <!-- <div class="flex flex-col gap-5 md:gap-8">
               <div class="flex flex-col gap-4">
                 <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold">
                   Mukunda - Shotru - Trailer
@@ -329,7 +365,7 @@
                   <i class="fa-solid fa-share-nodes"></i>
                 </button>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -339,19 +375,19 @@
         <div id="slider-thumb" class="owl-carousel owl-theme">
           <div class="item">
             <img
-              src="https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg"
+              src="https://naikapvillageresort.com/images/slideshow/1525931308.jpg"
               class="w-64 h-72 object-cover rounded-xl"
             />
           </div>
           <div class="item">
             <img
-              src="https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg"
+              src="https://naikapvillageresort.com/images/slideshow/1525931292.jpg"
               class="w-64 h-72 object-cover rounded-xl"
             />
           </div>
           <div class="item">
             <img
-              src="https://cdn.pixabay.com/photo/2016/08/11/23/48/mountains-1587287_1280.jpg"
+              src="https://naikapvillageresort.com/images/gallery/galleryimages/1394519762.jpg"
               class="w-64 h-72 object-cover rounded-xl"
             />
           </div>
@@ -361,14 +397,14 @@
           <button
             type="button"
             role="presentation"
-            class="customPrevBtn py-1 px-2 rounded-sm bg-primary text-white hover:bg-acent"
+            class="customPrevBtn py-1 px-2 rounded-sm bg-primary text-[#f5f5dc] hover:bg-acent"
           >
             <i class="fa-solid fa-chevron-left"></i>
           </button>
           <button
             type="button"
             role="presentation"
-            class="customNextBtn py-1 px-2 rounded-sm bg-primary text-white hover:bg-acent"
+            class="customNextBtn py-1 px-2 rounded-sm bg-primary text-[#f5f5dc] hover:bg-acent"
           >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
@@ -379,76 +415,370 @@
 
     <!-- ====== About Section -->
     <section
-      class="container mx-auto flex items-center justify-center min-h-screen"
+      class="container mx-auto flex items-center justify-center p-4 bg-transparent mt-10"
     >
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat,
-          quidem aperiam. Alias veniam ipsa tempora laboriosam debitis itaque,
-          temporibus laudantium obcaecati incidunt ullam iusto hic inventore
-          quasi voluptas illum praesentium? Natus vero mollitia beatae, tenetur
-          repellendus veniam. Omnis eum temporibus nisi ea, quaerat labore illo
-          repellat explicabo mollitia id eveniet.
+        <div class="border-y-2 border-dotted">
+          <div class="py-2">
+            <h3 class="text-4xl font-bold uppercase pt-5 text-[#f5f5dc]">
+              About Us
+            </h3>
+            <span class="font-bold text-[#f5f5dc]/80"
+              >Unwind & Relax at Naikap Village Resort</span
+            >
+          </div>
+          <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
+          <p class="text-justify text-md md:ext-lg mt-5 text-[#f5f5dc]">
+            Welcome to Naikap Village Resort, one of the best luxurious newly
+            built resort located at Purano Naikap, Kathmandu, 15 minutes drive
+            from Kalanki Chowk. It's a hub for entertainment destinations and it
+            quickly connects to the perfect combination of business and pleasure
+            needs. We embody experience, expertise and excellence as our company
+            is managed by group of tourism professionals.
+            <br />
+            With beautiful rooms, all the modern amenities,a restaurant, terrace
+            dining experience, beautiful garden, we further provide extensive
+            conference and banquet spaces to provide an ideal venue for larger
+            events and meetings.
+          </p>
+          <a href="" class="underline text-[#f5f5dc]">Learn more</a>
         </div>
         <img
-          src="https://images.unsplash.com/photo-1621096029176-9dbb22a56808?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fHBob3RvJTIwc2hvb3R8ZW58MHx8MHx8fDI%3D"
+          src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
           alt=""
-          class="w-full h-96 object-cover rounded-md mb-4"
+          class="w-full h-96 object-cover rounded-md"
         />
         <img
-          src="https://images.unsplash.com/photo-1523380744952-b7e00e6e2ffa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
           alt=""
-          class="w-full h-96 object-cover rounded-md mb-4"
+          class="w-full h-96 object-cover rounded-md"
         />
         <img
-          src="https://images.unsplash.com/photo-1557336843-21caa194d061?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTR8fHBob3RvJTIwc2hvb3R8ZW58MHx8MHx8fDI%3D"
+          src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
           alt=""
-          class="w-full h-96 object-cover rounded-md mb-4"
+          class="w-full h-96 object-cover rounded-md"
         />
+      </div>
+    </section>
+
+    <!-- ====== Accommodation Section -->
+    <section class="mt-10 container mx-auto">
+      <div class="py-2 px-4">
+        <div>
+          <h3 class="text-4xl font-bold uppercase pt-5 text-[#f5f5dc]">
+            Accommodations
+          </h3>
+          <span class="font-bold text-[#f5f5dc]/80"
+            >Great rooms are at your service.
+          </span>
+        </div>
+        <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
+      </div>
+      <div class="flex items-center justify-center p-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
+          <div class="shadow-md border border-gray-200 rounded-lg bg-gray-800">
+            <a href="#">
+              <img
+                class="rounded-t-lg"
+                src="https://naikapvillageresort.com/images/gallery/galleryimages/1394451902.jpg"
+                alt=""
+              />
+            </a>
+            <div class="p-5">
+              <div class="flex items-center justify-between">
+                <a href="#">
+                  <p class="font-normal text-gray-700 dark:text-gray-400">
+                    Rs. 2500
+                  </p>
+                  <h5
+                    class="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-[#f5f5dc]"
+                  >
+                    Picnic Spot
+                  </h5>
+                </a>
+                <a
+                  href="#"
+                  class="text-[#f5f5dc] bg-[#ef4c23] hover:bg-[#6b7e42] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-200 ease-in-out"
+                >
+                  Read more
+                  <i class="-mr-1 ml-2 h-4 w-4 fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <div class="flex items-center justify-between py-2">
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-square-parking text-md"></i>
+                  <div>
+                    <p>Parking</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-restroom text-md"></i>
+                  <div>
+                    <p>Restrooms</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-bed text-md"></i>
+                  <div>
+                    <p>Bedrooms</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shadow-md border border-gray-200 rounded-lg bg-gray-800">
+            <a href="#">
+              <img
+                class="rounded-t-lg"
+                src="https://naikapvillageresort.com/images/gallery/galleryimages/1394451902.jpg"
+                alt=""
+              />
+            </a>
+            <div class="p-5">
+              <div class="flex items-center justify-between">
+                <a href="#">
+                  <p class="font-normal text-gray-700 dark:text-gray-400">
+                    Rs. 2500
+                  </p>
+                  <h5
+                    class="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-[#f5f5dc]"
+                  >
+                    Event Space
+                  </h5>
+                </a>
+                <a
+                  href="#"
+                  class="text-[#f5f5dc] bg-[#ef4c23] hover:bg-[#6b7e42] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-200 ease-in-out"
+                >
+                  Read more
+                  <i class="-mr-1 ml-2 h-4 w-4 fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <div class="flex items-center justify-between py-2">
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-square-parking text-md"></i>
+                  <div>
+                    <p>Parking</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-restroom text-md"></i>
+                  <div>
+                    <p>Restrooms</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-bed text-md"></i>
+                  <div>
+                    <p>Bedrooms</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shadow-md border border-gray-200 rounded-lg bg-gray-800">
+            <a href="#">
+              <img
+                class="rounded-t-lg"
+                src="https://naikapvillageresort.com/images/gallery/galleryimages/1394451902.jpg"
+                alt=""
+              />
+            </a>
+            <div class="p-5">
+              <div class="flex items-center justify-between">
+                <a href="#">
+                  <p class="font-normal text-gray-700 dark:text-gray-400">
+                    Rs. 2500
+                  </p>
+                  <h5
+                    class="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-[#f5f5dc]"
+                  >
+                    Dining
+                  </h5>
+                </a>
+                <a
+                  href="#"
+                  class="text-[#f5f5dc] bg-[#ef4c23] hover:bg-[#6b7e42] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-200 ease-in-out"
+                >
+                  Read more
+                  <i class="-mr-1 ml-2 h-4 w-4 fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <div class="flex items-center justify-between py-2">
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-square-parking text-md"></i>
+                  <div>
+                    <p>Parking</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-restroom text-md"></i>
+                  <div>
+                    <p>Restrooms</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-bed text-md"></i>
+                  <div>
+                    <p>Bedrooms</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shadow-md border border-gray-200 rounded-lg bg-gray-800">
+            <a href="#">
+              <img
+                class="rounded-t-lg"
+                src="https://naikapvillageresort.com/images/gallery/galleryimages/1394451902.jpg"
+                alt=""
+              />
+            </a>
+            <div class="p-5">
+              <div class="flex items-center justify-between">
+                <a href="#">
+                  <p class="font-normal text-gray-700 dark:text-gray-400">
+                    Rs. 2500
+                  </p>
+                  <h5
+                    class="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-[#f5f5dc]"
+                  >
+                    Hall
+                  </h5>
+                </a>
+                <a
+                  href="#"
+                  class="text-[#f5f5dc] bg-[#ef4c23] hover:bg-[#6b7e42] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-200 ease-in-out"
+                >
+                  Read more
+                  <i class="-mr-1 ml-2 h-4 w-4 fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <div class="flex items-center justify-between py-2">
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-square-parking text-md"></i>
+                  <div>
+                    <p>Parking</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-restroom text-md"></i>
+                  <div>
+                    <p>Restrooms</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i class="fa-solid fa-bed text-md"></i>
+                  <div>
+                    <p>Bedrooms</p>
+                    <span>20 spaces</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ====== Gallery Section -->
 
-    <main class="bg-gray-200">
+    <main class="my-10 p-4">
       <div class="container mx-auto py-5" x-data="{ tab : 'all'}">
-        <div class="flex justify-center gap-4 my-7">
-          <button
-            type="button"
-            class="w-32 block bg-gray-300 py-2 text-center rounded-md"
-            @click="tab = 'all'"
-            :class="{ 'active bg-blue-500' : tab === 'all'}"
-          >
-            All
-          </button>
-          <button
-            type="button"
-            class="w-32 block bg-gray-300 py-2 text-center rounded-md"
-            @click="tab = 'cat'"
-            :class="{ 'active bg-blue-500' : tab === 'cat' }"
-          >
-            Cat
-          </button>
-          <button
-            type="button"
-            class="w-32 block bg-gray-300 py-2 text-center rounded-md"
-            @click="tab = 'dog'"
-            :class="{ 'active bg-blue-500' : tab === 'dog' }"
-          >
-            Dog
-          </button>
+        <div class="flex flex-col md:flex-row justify-between gap-4 my-7">
+          <div class="py-2">
+            <div>
+              <h3 class="text-4xl font-bold uppercase pt-5 text-[#f5f5dc]">
+                Gallery
+              </h3>
+              <span class="font-bold text-[#f5f5dc]/80"
+                >Unwind & Relax at Naikap Village Resort</span
+              >
+            </div>
+            <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
+          </div>
+          <div class="flex items-center justify-center gap-5">
+            <button
+              type="button"
+              class="w-32 block py-2 text-center text-[#f5f5dc] rounded-lg"
+              @click="tab = 'all'"
+              :class="{ 'active bg-[#ef4c23]' : tab === 'all'}"
+            >
+              All
+            </button>
+            <button
+              type="button"
+              class="w-32 block py-2 text-center text-[#f5f5dc] rounded-lg"
+              @click="tab = 'cat'"
+              :class="{ 'active bg-[#ef4c23]' : tab === 'cat' }"
+            >
+              Cat
+            </button>
+            <button
+              type="button"
+              class="w-32 block py-2 text-center text-[#f5f5dc] rounded-lg"
+              @click="tab = 'dog'"
+              :class="{ 'active bg-[#ef4c23]' : tab === 'dog' }"
+            >
+              Dog
+            </button>
+          </div>
         </div>
         <div
-          class="grid grid-cols-3 gap-2"
+          class="grid grid-cols-2 md:grid-cols-3 gap-2"
           x-data="{modal : false, headline: '', description : '', url: 'https://google.de'}"
         >
-          <figure
+          <!-- <figure
             x-show="tab === 'cat' || tab === 'all'"
             class="cursor-pointer overflow-hidden"
             @click="modal = true, headline = 'Cat 1 Headline', description = 'description from cat 1', url='https://www.google.com/search?q=süße katzen'"
+          > -->
+          <figure
+            x-show="tab === 'cat' || tab === 'all'"
+            class="cursor-pointer overflow-hidden"
+            @click="toggleFullscreen('https://naikapvillageresort.com/images/gallery/galleryimages/1394519971.jpg')"
           >
             <img
-              src="https://picsum.photos/id/40/600/400"
+              src="https://naikapvillageresort.com/images/gallery/galleryimages/1394519971.jpg"
               alt=""
               title=""
               class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
@@ -460,7 +790,7 @@
             @click="modal = true, headline = 'Dog 1 Headline', description = 'description from dog 1', url='https://www.google.com/search?q=süße hunde'"
           >
             <img
-              src="https://picsum.photos/id/659/600/400"
+              src="https://naikapvillageresort.com/images/gallery/galleryimages/1394519789.jpg"
               alt=""
               title=""
               class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
@@ -472,7 +802,7 @@
             @click="modal = true, headline = 'Cat 2 Headline', description = 'ddescription from cat 2', url='katzen'"
           >
             <img
-              src="https://picsum.photos/id/237/600/400"
+              src="https://naikapvillageresort.com/images/gallery/galleryimages/1394519762.jpg"
               alt=""
               title=""
               class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
@@ -484,7 +814,7 @@
             @click="modal = true, headline = 'Dog 2 Headline', description = 'description from dog 2', url='https://www.google.com/search?q=hunde'"
           >
             <img
-              src="https://picsum.photos/id/1025/600/400"
+              src="https://naikapvillageresort.com/images/gallery/galleryimages/1394451902.jpg"
               alt=""
               title=""
               class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
@@ -496,7 +826,7 @@
             @click="modal = true, headline = 'Cat 3 Headline', description = 'description from cat 3', url='https://www.google.com/search?q=cats'"
           >
             <img
-              src="https://picsum.photos/id/593/600/400"
+              src="https://naikapvillageresort.com/images/gallery/galleryimages/1394451902.jpg"
               alt=""
               title=""
               class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
@@ -508,12 +838,22 @@
             @click="modal = true, headline = 'Dog 3 Headline', description = 'description from dog 3', url='https://www.google.com/search?q=dogs' "
           >
             <img
-              src="https://picsum.photos/id/1062/600/400"
+              src="https://naikapvillageresort.com/images/gallery/galleryimages/1394451902.jpg"
               alt=""
               title=""
               class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
             />
           </figure>
+
+          <div>
+            <div
+              x-show="fullscreen"
+              class="fullscreen-image fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10 flex justify-center items-center"
+              @click="toggleFullscreen('')"
+            >
+              <img :src="fullscreenImage" alt="" class="w-full h-full" />
+            </div>
+          </div>
 
           <div
             x-show="modal"
@@ -546,7 +886,7 @@
               <h2 class="text-2xl font-bold mb-3" x-text="headline">
                 Lorem, ipsum dolor.
               </h2>
-              <p class="text-gray-600 mb-4" x-text="description">
+              <p class="text-[#f5f5dc]/60 mb-4" x-text="description">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Expedita autem saepe corrupti voluptatibus enim! Cumque minima
                 earum nemo quisquam vero sed ipsa nam labore inventore
@@ -555,7 +895,7 @@
               <a
                 x-bind:href="url"
                 target="_blank"
-                class="mt-5 text-blue-500 font-bold"
+                class="mt-5 text-[#f5f5dc] font-bold"
                 >lorem...</a
               >
             </div>
@@ -565,116 +905,147 @@
     </main>
 
     <!-- ====== Background Section -->
-    <section>
-      <div>
-        <video
-          id="video1"
-          width="100%"
-          height="auto"
-          autoplay=""
-          loop=""
-          muted=""
-        >
-          <source
-            src="http://localhost/naikapvillageresort/template/web/images/hotel-pabera.mp4"
-            type="video/mp4"
-          />
-          does not support
-        </video>
-      </div>
+    <section class="w-screen h-screen fixed">
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FNaikaphospitality%2Fvideos%2F235378572891538%2F&show_text=false&width=560&t=0"
+        width="100%"
+        height="100%"
+        style="border: none; overflow: hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        data-autoplay="true"
+        allowfullscreen="true"
+      ></iframe>
     </section>
 
     <!-- ====== Testimonials Section -->
-    <section class="container mx-auto mt-20 swiper mySwiper">
-      <div class="mb-16 swiper-wrapper">
+    <section class="container mx-auto m-10 p-4 swiper mySwiper">
+      <div class="py-2">
+        <div>
+          <h3 class="text-4xl font-bold uppercase pt-5 text-[#f5f5dc]">
+            Happy Guests
+          </h3>
+          <span class="font-bold text-[#f5f5dc]/80"
+            >What our guest have to say about our Hotel</span
+          >
+        </div>
+        <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
+      </div>
+      <div class="mt-5 swiper-wrapper">
         <div class="swiper-slide">
-          <div class="p-4 text-gray-800 rounded-lg shadow-md">
+          <div class="p-4 text-gray-800 rounded-lg shadow-md bg-[#f5f5dc]/20">
             <div class="mb-2">
-              <p class="mb-2 text-center text-gray-600">
-                " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Similique sapiente iusto esse. "
+              <p class="mb-2 text-[#f5f5dc]/60 text-justify">
+                Beautiful Property, Amazing Hospitality and Wonderful memories
+                to carry back home. Reservations gave us the opportunity to
+                travel as a complete Family by upgrading us to the Suite. Hotel
+                staffs made us feel at home with a friendly chat and last but
+                not the least, safety protocols were all followed . Such level
+                of hospitality commitment is very rare. I will highly recommend
+                this property for both short long breaks. Looking forward to go
+                there again.
               </p>
               <div class="flex flex-col items-center justify-center">
                 <div
                   class="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full"
                 >
                   <img
-                    src="https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419__340.jpg"
+                    src="https://th.bing.com/th/id/OIP.ZL_i0pA4cu2XgTd0ug_LlwAAAA?rs=1&pid=ImgDetMain"
                     alt="img"
                     class="object-cover object-center w-full h-full"
                   />
                 </div>
-                <h5 class="font-bold text-indigo-600">John Doe</h5>
-                <p class="text-sm text-gray-600">CEO / Founder</p>
+                <h5 class="font-bold text-[#f5f5dc]">Purna Shrestha</h5>
+                <p class="text-sm text-[#f5f5dc]/60">CEO / Founder</p>
               </div>
             </div>
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="p-4 text-gray-800 rounded-lg shadow-md">
+          <div class="p-4 text-gray-800 rounded-lg shadow-md bg-[#f5f5dc]/20">
             <div class="mb-2">
-              <p class="mb-2 text-center text-gray-600">
-                " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Similique sapiente iusto esse. "
+              <p class="mb-2 text-[#f5f5dc]/60 text-justify">
+                Beautiful Property, Amazing Hospitality and Wonderful memories
+                to carry back home. Reservations gave us the opportunity to
+                travel as a complete Family by upgrading us to the Suite. Hotel
+                staffs made us feel at home with a friendly chat and last but
+                not the least, safety protocols were all followed . Such level
+                of hospitality commitment is very rare. I will highly recommend
+                this property for both short long breaks. Looking forward to go
+                there again.
               </p>
               <div class="flex flex-col items-center justify-center">
                 <div
                   class="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full"
                 >
                   <img
-                    src="https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419__340.jpg"
+                    src="https://th.bing.com/th/id/OIP.ZL_i0pA4cu2XgTd0ug_LlwAAAA?rs=1&pid=ImgDetMain"
                     alt="img"
                     class="object-cover object-center w-full h-full"
                   />
                 </div>
-                <h5 class="font-bold text-indigo-600">John Doe</h5>
-                <p class="text-sm text-gray-600">CEO / Founder</p>
+                <h5 class="font-bold text-[#f5f5dc]">Purna Shrestha</h5>
+                <p class="text-sm text-[#f5f5dc]/60">CEO / Founder</p>
               </div>
             </div>
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="p-4 text-gray-800 rounded-lg shadow-md">
+          <div class="p-4 text-gray-800 rounded-lg shadow-md bg-[#f5f5dc]/20">
             <div class="mb-2">
-              <p class="mb-2 text-center text-gray-600">
-                " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Similique sapiente iusto esse. "
+              <p class="mb-2 text-[#f5f5dc]/60 text-justify">
+                Beautiful Property, Amazing Hospitality and Wonderful memories
+                to carry back home. Reservations gave us the opportunity to
+                travel as a complete Family by upgrading us to the Suite. Hotel
+                staffs made us feel at home with a friendly chat and last but
+                not the least, safety protocols were all followed . Such level
+                of hospitality commitment is very rare. I will highly recommend
+                this property for both short long breaks. Looking forward to go
+                there again.
               </p>
               <div class="flex flex-col items-center justify-center">
                 <div
                   class="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full"
                 >
                   <img
-                    src="https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419__340.jpg"
+                    src="https://th.bing.com/th/id/OIP.ZL_i0pA4cu2XgTd0ug_LlwAAAA?rs=1&pid=ImgDetMain"
                     alt="img"
                     class="object-cover object-center w-full h-full"
                   />
                 </div>
-                <h5 class="font-bold text-indigo-600">John Doe</h5>
-                <p class="text-sm text-gray-600">CEO / Founder</p>
+                <h5 class="font-bold text-[#f5f5dc]">Purna Shrestha</h5>
+                <p class="text-sm text-[#f5f5dc]/60">CEO / Founder</p>
               </div>
             </div>
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="p-4 text-gray-800 rounded-lg shadow-md">
+          <div class="p-4 text-gray-800 rounded-lg shadow-md bg-[#f5f5dc]/20">
             <div class="mb-2">
-              <p class="mb-2 text-center text-gray-600">
-                " Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Similique sapiente iusto esse. "
+              <p class="mb-2 text-[#f5f5dc]/60 text-justify">
+                Beautiful Property, Amazing Hospitality and Wonderful memories
+                to carry back home. Reservations gave us the opportunity to
+                travel as a complete Family by upgrading us to the Suite. Hotel
+                staffs made us feel at home with a friendly chat and last but
+                not the least, safety protocols were all followed . Such level
+                of hospitality commitment is very rare. I will highly recommend
+                this property for both short long breaks. Looking forward to go
+                there again.
               </p>
               <div class="flex flex-col items-center justify-center">
                 <div
                   class="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full"
                 >
                   <img
-                    src="https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419__340.jpg"
+                    src="https://th.bing.com/th/id/OIP.ZL_i0pA4cu2XgTd0ug_LlwAAAA?rs=1&pid=ImgDetMain"
                     alt="img"
                     class="object-cover object-center w-full h-full"
                   />
                 </div>
-                <h5 class="font-bold text-indigo-600">John Doe</h5>
-                <p class="text-sm text-gray-600">CEO / Founder</p>
+                <h5 class="font-bold text-[#f5f5dc]">Purna Shrestha</h5>
+                <p class="text-sm text-[#f5f5dc]/60">CEO / Founder</p>
               </div>
             </div>
           </div>
@@ -685,69 +1056,58 @@
 
     <!-- ====== Offer Section -->
 
-    <section
-      class="container mx-auto flex items-center justify-center min-h-screen"
-    >
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <img
-          src="https://images.unsplash.com/photo-1563765538654-41d961f7db1c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGhvdG8lMjBzaG9vdHxlbnwwfHwwfHx8Mg%3D%3D"
-          alt=""
-          class="w-full h-96 object-cover rounded-md mb-4"
-        />
-        <div>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
-            numquam debitis ducimus, quae harum provident ipsum corrupti at,
-            iste minus suscipit voluptas repellendus. Inventore ullam totam ipsa
-            voluptatem earum tempora sunt autem, error veritatis eius in unde
-            itaque veniam minima consequatur officiis debitis est maiores, illo
-            nulla animi atque? Qui magni impedit dolorum. Numquam, aliquam quos
-            voluptates eum iusto praesentium quia magnam necessitatibus officiis
-            officia aperiam alias illum dolores veniam mollitia ex unde!
-            Dignissimos autem dolore nam tempore veritatis enim adipisci
-            cupiditate similique libero voluptate incidunt et consequatur,
-            cumque maxime voluptas, animi mollitia atque optio. Ducimus,
-            aperiam. Quod, debitis ducimus!
-          </p>
+    <!-- <section class="container mx-auto p-4 pt-5 my-10">
+      <div class="flex items-center justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <img
+            src="https://naikapvillageresort.com/images/gallery/galleryimages/1394519789.jpg"
+            alt=""
+            class="w-full h-96 object-cover rounded-md mb-4"
+          />
+          <div class="border-y-2 border-dotted py-2">
+            <div>
+              <h3 class="text-4xl font-bold uppercase pt-5 text-[#f5f5dc]">
+                Our Offers
+              </h3>
+              <span class="font-bold text-[#f5f5dc]/80"
+                >Dreams don't work unless you do. Anything is possible.</span
+              >
+            </div>
+            <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
+
+            <p class="text-justify text-md md:ext-lg mt-5">
+              Welcome to Naikap Village Resort, one of the best luxurious newly
+              built resort located at Purano Naikap, Kathmandu, 15 minutes drive
+              from Kalanki Chowk. It's a hub for entertainment destinations and
+              it quickly connects to the perfect combination of business and
+              pleasure needs. We embody experience, expertise and excellence as
+              our company is managed by group of tourism professionals.
+            </p>
+          </div>
+          <img
+            src="https://naikapvillageresort.com/images/gallery/galleryimages/1394519971.jpg"
+            alt=""
+            class="w-full h-96 object-cover rounded-md mb-4"
+          />
         </div>
-        <img
-          src="https://images.unsplash.com/photo-1523380744952-b7e00e6e2ffa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          class="w-full h-96 object-cover rounded-md mb-4"
-        />
       </div>
-    </section>
+    </section> -->
 
     <!-- ====== Footer Section Start -->
-    <footer
-      class="relative z-10 bg-blue-500 dark:bg-dark pt-20 pb-10 lg:pt-[120px] lg:pb-20"
-    >
-      <div class="container mx-auto">
+    <footer class="relative z-10 bg-gray-800 text-[#f5f5dc] p-4">
+      <div class="container mx-auto py-4">
         <div class="flex flex-wrap -mx-4">
           <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
             <div class="w-full mb-10">
-              <a
-                href="javascript:void(0)"
-                class="mb-6 inline-block max-w-[160px]"
-              >
-                <img
-                  src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo.svg"
-                  alt="logo"
-                  class="max-w-full dark:hidden"
-                />
-                <img
-                  src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo-white.svg"
-                  alt="logo"
-                  class="max-w-full hidden dark:block"
-                />
+              <a href="javascript:void(0)" class="mb-6 inline-block">
+                <h2 class="text-lg font-bold">Naikap Village Resort</h2>
+                <div class="w-1/2 h-1 rounded-full bg-[#f5f5dc]/40"></div>
               </a>
               <p class="text-base text-body-color dark:text-dark-6 mb-7">
                 Sed ut perspiciatis undmnis is iste natus error sit amet
                 voluptatem totam rem aperiam.
               </p>
-              <p
-                class="flex items-center text-sm font-medium text-dark dark:text-white"
-              >
+              <p class="flex items-center text-sm font-medium text-dark">
                 <span class="mr-3 text-primary">
                   <svg
                     width="20"
@@ -783,40 +1143,42 @@
           </div>
           <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
             <div class="w-full mb-10">
-              <h4 class="text-lg font-semibold text-dark dark:text-white mb-9">
-                Resources
+              <h4 class="text-lg font-semibold text-dark mb-9">
+                Our Services
+                <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
               </h4>
+
               <ul class="space-y-3">
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
-                    SaaS Development
+                    Swimming
                   </a>
                 </li>
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
-                    Our Products
+                    Rejuvanle
                   </a>
                 </li>
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
-                    User Flow
+                    Activities
                   </a>
                 </li>
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
-                    User Strategy
+                    Souvenir Shop
                   </a>
                 </li>
               </ul>
@@ -824,22 +1186,23 @@
           </div>
           <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
             <div class="w-full mb-10">
-              <h4 class="text-lg font-semibold text-dark dark:text-white mb-9">
+              <h4 class="text-lg font-semibold text-dark mb-9">
                 Company
+                <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
               </h4>
               <ul class="space-y-3">
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
-                    About TailGrids
+                    About Us
                   </a>
                 </li>
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
                     Contact & Support
                   </a>
@@ -847,7 +1210,7 @@
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
                     Success History
                   </a>
@@ -855,7 +1218,7 @@
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
                     Setting & Privacy
                   </a>
@@ -865,40 +1228,41 @@
           </div>
           <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
             <div class="w-full mb-10">
-              <h4 class="text-lg font-semibold text-dark dark:text-white mb-9">
+              <h4 class="text-lg font-semibold text-dark mb-9">
                 Quick Links
+                <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
               </h4>
               <ul class="space-y-3">
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
-                    Premium Support
+                    Get in touch
                   </a>
                 </li>
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
-                    Our Services
+                    Location
                   </a>
                 </li>
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
-                    Know Our Team
+                    Tel Number
                   </a>
                 </li>
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                    class="inline-block text-base leading-loose text-body-color hover:underline"
                   >
-                    Download App
+                    Email
                   </a>
                 </li>
               </ul>
@@ -906,133 +1270,102 @@
           </div>
           <div class="w-full px-4 sm:w-1/2 lg:w-3/12">
             <div class="w-full mb-10">
-              <h4 class="text-lg font-semibold text-dark dark:text-white mb-9">
+              <h4 class="text-lg font-semibold text-dark mb-9">
                 Follow Us On
+                <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
               </h4>
               <div class="flex items-center mb-6">
                 <a
                   href="javascript:void(0)"
-                  class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:border-primary hover:bg-primary border-stroke dark:border-dark-3 dark:hover:border-primary dark:text-white hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full hover:bg-[#f5f5dc] hover:text-gray-800 sm:mr-4 lg:mr-3 xl:mr-4 transition-all duration-200 ease-in-out"
                 >
-                  <svg
-                    width="8"
-                    height="16"
-                    viewBox="0 0 8 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M7.43902 6.4H6.19918H5.75639V5.88387V4.28387V3.76774H6.19918H7.12906C7.3726 3.76774 7.57186 3.56129 7.57186 3.25161V0.516129C7.57186 0.232258 7.39474 0 7.12906 0H5.51285C3.76379 0 2.54609 1.44516 2.54609 3.5871V5.83226V6.34839H2.10329H0.597778C0.287819 6.34839 0 6.63226 0 7.04516V8.90323C0 9.26452 0.243539 9.6 0.597778 9.6H2.05902H2.50181V10.1161V15.3032C2.50181 15.6645 2.74535 16 3.09959 16H5.18075C5.31359 16 5.42429 15.9226 5.51285 15.8194C5.60141 15.7161 5.66783 15.5355 5.66783 15.3806V10.1419V9.62581H6.13276H7.12906C7.41688 9.62581 7.63828 9.41935 7.68256 9.10968V9.08387V9.05806L7.99252 7.27742C8.01466 7.09677 7.99252 6.89032 7.85968 6.68387C7.8154 6.55484 7.61614 6.42581 7.43902 6.4Z"
-                    />
-                  </svg>
+                  <i class="fa-brands fa-facebook-f"></i>
                 </a>
                 <a
                   href="javascript:void(0)"
-                  class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:border-primary hover:bg-primary border-stroke dark:border-dark-3 dark:hover:border-primary dark:text-white hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full hover:bg-[#f5f5dc] hover:text-gray-800 sm:mr-4 lg:mr-3 xl:mr-4 transition-all duration-200 ease-in-out"
                 >
-                  <svg
-                    width="16"
-                    height="12"
-                    viewBox="0 0 16 12"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M14.2194 2.06654L15.2 0.939335C15.4839 0.634051 15.5613 0.399217 15.5871 0.2818C14.8129 0.704501 14.0903 0.845401 13.6258 0.845401H13.4452L13.3419 0.751468C12.7226 0.258317 11.9484 0 11.1226 0C9.31613 0 7.89677 1.36204 7.89677 2.93542C7.89677 3.02935 7.89677 3.17025 7.92258 3.26419L8 3.73386L7.45806 3.71037C4.15484 3.61644 1.44516 1.03327 1.00645 0.587084C0.283871 1.76125 0.696774 2.88845 1.13548 3.59296L2.0129 4.90802L0.619355 4.20352C0.645161 5.18982 1.05806 5.96477 1.85806 6.52838L2.55484 6.99804L1.85806 7.25636C2.29677 8.45401 3.27742 8.94716 4 9.13503L4.95484 9.36986L4.05161 9.93346C2.60645 10.8728 0.8 10.8024 0 10.7319C1.62581 11.7652 3.56129 12 4.90323 12C5.90968 12 6.65806 11.9061 6.83871 11.8356C14.0645 10.2857 14.4 4.41487 14.4 3.2407V3.07632L14.5548 2.98239C15.4323 2.23092 15.7935 1.8317 16 1.59687C15.9226 1.62035 15.8194 1.66732 15.7161 1.6908L14.2194 2.06654Z"
-                    />
-                  </svg>
+                  <i class="fa-solid fa-envelope"></i>
                 </a>
                 <a
                   href="javascript:void(0)"
-                  class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:border-primary hover:bg-primary border-stroke dark:border-dark-3 dark:hover:border-primary dark:text-white hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full hover:bg-[#f5f5dc] hover:text-gray-800 sm:mr-4 lg:mr-3 xl:mr-4 transition-all duration-200 ease-in-out"
                 >
-                  <svg
-                    width="16"
-                    height="12"
-                    viewBox="0 0 16 12"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M15.6645 1.88018C15.4839 1.13364 14.9419 0.552995 14.2452 0.359447C13.0065 6.59222e-08 8 0 8 0C8 0 2.99355 6.59222e-08 1.75484 0.359447C1.05806 0.552995 0.516129 1.13364 0.335484 1.88018C0 3.23502 0 6 0 6C0 6 0 8.79263 0.335484 10.1198C0.516129 10.8664 1.05806 11.447 1.75484 11.6406C2.99355 12 8 12 8 12C8 12 13.0065 12 14.2452 11.6406C14.9419 11.447 15.4839 10.8664 15.6645 10.1198C16 8.79263 16 6 16 6C16 6 16 3.23502 15.6645 1.88018ZM6.4 8.57143V3.42857L10.5548 6L6.4 8.57143Z"
-                    />
-                  </svg>
+                  <i class="fa-brands fa-youtube"></i>
                 </a>
                 <a
                   href="javascript:void(0)"
-                  class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:border-primary hover:bg-primary border-stroke dark:border-dark-3 dark:hover:border-primary dark:text-white hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full hover:bg-[#f5f5dc] hover:text-gray-800 sm:mr-4 lg:mr-3 xl:mr-4 transition-all duration-200 ease-in-out"
                 >
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M13.0214 0H1.02084C0.453707 0 0 0.451613 0 1.01613V12.9839C0 13.5258 0.453707 14 1.02084 14H12.976C13.5432 14 13.9969 13.5484 13.9969 12.9839V0.993548C14.0422 0.451613 13.5885 0 13.0214 0ZM4.15142 11.9H2.08705V5.23871H4.15142V11.9ZM3.10789 4.3129C2.42733 4.3129 1.90557 3.77097 1.90557 3.11613C1.90557 2.46129 2.45002 1.91935 3.10789 1.91935C3.76577 1.91935 4.31022 2.46129 4.31022 3.11613C4.31022 3.77097 3.81114 4.3129 3.10789 4.3129ZM11.9779 11.9H9.9135V8.67097C9.9135 7.90323 9.89082 6.8871 8.82461 6.8871C7.73571 6.8871 7.57691 7.74516 7.57691 8.60323V11.9H5.51254V5.23871H7.53154V6.16452H7.55423C7.84914 5.62258 8.50701 5.08065 9.52785 5.08065C11.6376 5.08065 12.0232 6.43548 12.0232 8.2871V11.9H11.9779Z"
-                    />
-                  </svg>
+                  <i class="fa-brands fa-linkedin-in"></i>
                 </a>
               </div>
-              <p class="text-base text-body-color dark:text-dark-6">
-                &copy; 2025 TailGrids
-              </p>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <span class="absolute left-0 bottom-0 z-[-1]">
-          <svg
-            width="217"
-            height="229"
-            viewBox="0 0 217 229"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z"
-              fill="url(#paint0_linear_1179_5)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_1179_5"
-                x1="76.5"
-                y1="281"
-                x2="76.5"
-                y2="1.22829e-05"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#3056D3" stop-opacity="0.08" />
-                <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </span>
-        <span class="absolute top-10 right-10 z-[-1]">
-          <svg
-            width="75"
-            height="75"
-            viewBox="0 0 75 75"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z"
-              fill="url(#paint0_linear_1179_4)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_1179_4"
-                x1="-1.63917e-06"
-                y1="37.5"
-                x2="75"
-                y2="37.5"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#13C296" stop-opacity="0.31" />
-                <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </span>
+        <div>
+          <span class="absolute left-0 bottom-0 z-[-1]">
+            <svg
+              width="217"
+              height="229"
+              viewBox="0 0 217 229"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z"
+                fill="url(#paint0_linear_1179_5)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1179_5"
+                  x1="76.5"
+                  y1="281"
+                  x2="76.5"
+                  y2="1.22829e-05"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#3056D3" stop-opacity="0.08" />
+                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="absolute top-10 right-10 z-[-1]">
+            <svg
+              width="75"
+              height="75"
+              viewBox="0 0 75 75"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z"
+                fill="url(#paint0_linear_1179_4)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1179_4"
+                  x1="-1.63917e-06"
+                  y1="37.5"
+                  x2="75"
+                  y2="37.5"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#13C296" stop-opacity="0.31" />
+                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </div>
+
+        <div class="border-[#f5f5dc] border-b-2 border-dotted mb-4"></div>
+
+        <div class="flex items-center justify-between flex-col md:flex-row">
+          <p>Copyright © Naikap Village Resort 2023. All rights reserved.</p>
+          <p>Developed by: <a href="" class="underline">Longtail e-media</a></p>
+        </div>
       </div>
     </footer>
     <!-- ====== Footer Section End -->
@@ -1040,6 +1373,7 @@
     <!-- hero section -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <script>
       const main_slider = $("#main-slider");
       main_slider.owlCarousel({
@@ -1091,11 +1425,6 @@
     </script>
     <!-- hero section -->
 
-    <!-- Navbar -->
-    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
-    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-    <!-- Navbar -->
-
     <!-- gallery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.8.1/cdn.js"></script>
 
@@ -1122,6 +1451,37 @@
           },
         },
       });
+    </script>
+
+    <script>
+      const navbar = document.querySelector("nav");
+      const logo = document.querySelector(".logo");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+          navbar.classList.add("backdrop-blur-lg");
+        } else {
+          navbar.classList.remove("backdrop-blur-lg");
+        }
+      });
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+          logo.classList.remove("grayscale");
+          // logo.style.transform = "scale(0.75)";
+        } else {
+          logo.classList.add("grayscale");
+          // logo.style.transform = "scale(1)";
+        }
+      });
+    </script>
+
+    <script>
+      window.toggleFullscreen = (imageSrc) => {
+        const fullscreenDiv = document.querySelector(".fullscreen-image");
+        fullscreenDiv.querySelector("img").src = imageSrc;
+        fullscreenDiv.style.display =
+          fullscreenDiv.style.display === "none" ? "block" : "none";
+      };
     </script>
   </body>
 </html>
