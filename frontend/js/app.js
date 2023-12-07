@@ -52,17 +52,76 @@ const logo = document.querySelector(".logo");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 0) {
-    navbar.classList.add("backdrop-blur-lg");
+    navbar.style.backgroundColor = "rgba(0, 0, 0, 0.25)";
+    navbar.classList.add("backdrop-blur-md");
   } else {
-    navbar.classList.remove("backdrop-blur-lg");
+    navbar.style.backgroundColor = "transparent";
+    navbar.classList.remove("backdrop-blur-md");
   }
 });
 window.addEventListener("scroll", () => {
   if (window.scrollY > 0) {
     logo.classList.remove("grayscale");
-    // logo.style.transform = "scale(0.75)";
+    logo.style.transform = "scale(0.75)";
   } else {
     logo.classList.add("grayscale");
-    // logo.style.transform = "scale(1)";
+    logo.style.transform = "scale(1)";
   }
+});
+
+// Gallery Fullscreen
+window.toggleFullscreen = (imageSrc) => {
+  const fullscreenDiv = document.querySelector(".fullscreen-image");
+  fullscreenDiv.querySelector("img").src = imageSrc;
+  fullscreenDiv.style.display =
+    fullscreenDiv.style.display === "none" ? "block" : "none";
+};
+
+// Hero Slider
+const main_slider = $("#main-slider");
+main_slider.owlCarousel({
+  rtl: false,
+  loop: true,
+  nav: false,
+  dots: false,
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: false,
+  responsive: {
+    0: {
+      items: 1,
+    },
+  },
+});
+
+const slider_thumb = $("#slider-thumb");
+slider_thumb.owlCarousel({
+  rtl: false,
+  loop: true,
+  margin: 12,
+  nav: false,
+  dots: false,
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: false,
+  responsive: {
+    0: {
+      items: 2,
+    },
+  },
+});
+
+// Custom Navigation Events
+$(".customNextBtn").click(function () {
+  main_slider.trigger("next.owl.carousel");
+});
+$(".customPrevBtn").click(function () {
+  main_slider.trigger("prev.owl.carousel");
+});
+
+$(".customNextBtn").click(function () {
+  slider_thumb.trigger("next.owl.carousel");
+});
+$(".customPrevBtn").click(function () {
+  slider_thumb.trigger("prev.owl.carousel");
 });
