@@ -4,65 +4,103 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/links.css" />
     <link rel="stylesheet" href="dist/output.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="bg-[#6b7e42] font-serif">
+    <header id="navbar"></header>
+
     <section
       class="bg-[url('https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg')] w-full h-[60vh] bg-fixed bg-center bg-no-repeat bg-cover"
     ></section>
 
-    <div
-      class="container mx-auto flex items-center justify-center min-h-screen"
-    >
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quos
-          beatae minima commodi sapiente, unde deleniti mollitia, molestiae rem
-          iusto voluptate rerum facilis. Voluptatem assumenda obcaecati ullam,
-          nam, esse voluptas dignissimos facere eaque vitae corrupti aliquid
-          similique quos magnam officia odio asperiores consequatur vero? Iste
-          quas animi nostrum cupiditate laudantium, quae, nihil optio, nulla
-          suscipit sed in quod ex aliquid rem qui! Voluptate vitae laudantium
-          natus nisi perferendis id quasi unde culpa accusantium sed odit
-          asperiores sequi voluptatum magnam fuga, commodi excepturi optio
-          laborum numquam corrupti magni quidem! Fuga molestiae laboriosam ut
-          quaerat reiciendis, corrupti delectus amet at culpa porro.
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quos
-          beatae minima commodi sapiente, unde deleniti mollitia, molestiae rem
-          iusto voluptate rerum facilis. Voluptatem assumenda obcaecati ullam,
-          nam, esse voluptas dignissimos facere eaque vitae corrupti aliquid
-          similique quos magnam officia odio asperiores consequatur vero? Iste
-          quas animi nostrum cupiditate laudantium, quae, nihil optio, nulla
-          suscipit sed in quod ex aliquid rem qui! Voluptate vitae laudantium
-          natus nisi perferendis id quasi unde culpa accusantium sed odit
-          asperiores sequi voluptatum magnam fuga, commodi excepturi optio
-          laborum numquam corrupti magni quidem! Fuga molestiae laboriosam ut
-          quaerat reiciendis, corrupti delectus amet at culpa porro.
-        </div>
-        <img
-          src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
-          alt=""
-          class="w-full h-96 object-cover rounded-md mb-4"
-        />
-        <img
-          src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
-          alt=""
-          class="w-full h-96 object-cover rounded-md mb-4"
-        />
-        <img
-          src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
-          alt=""
-          class="w-full h-96 object-cover rounded-md mb-4"
-        />
-        <img
-          src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
-          alt=""
-          class="w-full h-96 object-cover rounded-md mb-4"
-        />
+    <div class="flex flex-col items-center justify-center mt-10">
+      <h2 class="text-4xl font-bold uppercase pt-5 text-[#f5f5dc]">About Us</h2>
+      <div class="text-center mb-10">
+        <span
+          class="inline-block w-1 h-1 rounded-full bg-[#f5f5dc] ml-1"
+        ></span>
+        <span
+          class="inline-block w-3 h-1 rounded-full bg-[#f5f5dc] ml-1"
+        ></span>
+        <span class="inline-block w-40 h-1 rounded-full bg-[#f5f5dc]"></span>
+        <span
+          class="inline-block w-3 h-1 rounded-full bg-[#f5f5dc] ml-1"
+        ></span>
+        <span
+          class="inline-block w-1 h-1 rounded-full bg-[#f5f5dc] ml-1"
+        ></span>
       </div>
     </div>
+
+    <div class="container mx-auto flex items-center justify-center p-4 mb-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div
+          class="text-[#f5f5dc] p-4 border-x-2 border-dotted border-[#f5f5dc]"
+        >
+          <p>
+            Naikap Village Resort is a hidden gem nestled in the beautiful hills
+            of Nepal. The resort offers a peaceful and serene atmosphere,
+            perfect for those seeking a break from the hustle and bustle of city
+            life. Whether you're looking for a romantic getaway or a family
+            vacation, Naikap Village Resort is the perfect destination for
+            anyone seeking a peaceful and rejuvenating experience in the heart
+            of Nepal.
+          </p>
+        </div>
+        <div
+          class="text-[#f5f5dc] p-4 border-y-2 border-dotted border-[#f5f5dc]"
+        >
+          <p class="underline font-bold">
+            Immerse in the Enchantment of Naikap Village Resort
+          </p>
+
+          <ul class="list-inside list-disc">
+            <li>Event Spaces</li>
+            <li>Picnic spot</li>
+            <li>Bar</li>
+            <li>City View</li>
+            <li>Exquisite</li>
+            <li>Dining</li>
+            <li>Conference hall</li>
+          </ul>
+        </div>
+        <div class="overflow-hidden">
+          <img
+            src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
+            alt=""
+            class="w-full h-60 object-cover rounded-md hover:scale-125 transition-all duration-300 ease-linear"
+          />
+        </div>
+
+        <div class="overflow-hidden">
+          <img
+            src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
+            alt=""
+            class="w-full h-60 object-cover rounded-md hover:scale-125 transition-all duration-300 ease-linear"
+          />
+        </div>
+        <div class="overflow-hidden">
+          <img
+            src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
+            alt=""
+            class="w-full h-60 object-cover rounded-md hover:scale-125 transition-all duration-300 ease-linear"
+          />
+        </div>
+        <div class="overflow-hidden">
+          <img
+            src="https://naikapvillageresort.com/images/article/thumbnails/x8SwF_about3.jpg"
+            alt=""
+            class="w-full h-60 object-cover rounded-md hover:scale-125 transition-all duration-300 ease-linear"
+          />
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script async src="./js/app.js"></script>
   </body>
 </html>

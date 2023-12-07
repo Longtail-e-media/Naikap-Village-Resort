@@ -4,202 +4,179 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link rel="stylesheet" href="./css/links.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .filter-btn {
+        padding: 8px 16px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .filter-btn.active {
+        background-color: #ef4c23;
+        color: #ffffff;
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-gray-800 font-serif">
+    <header id="navbar"></header>
+
     <section
       class="bg-[url('https://images.unsplash.com/photo-1523380744952-b7e00e6e2ffa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] w-full h-[60vh] bg-fixed bg-center bg-no-repeat bg-cover"
     ></section>
-    <main class="bg-gray-200">
-      <div class="container mx-auto py-5" x-data="{ tab : 'all'}">
-        <div class="flex justify-center gap-4 my-7">
-          <button
-            type="button"
-            class="w-32 block bg-gray-300 py-2 text-center rounded-md"
-            @click="tab = 'all'"
-            :class="{ 'active bg-blue-500' : tab === 'all'}"
-          >
-            All
-          </button>
-          <button
-            type="button"
-            class="w-32 block bg-gray-300 py-2 text-center rounded-md"
-            @click="tab = 'cat'"
-            :class="{ 'active bg-blue-500' : tab === 'cat' }"
-          >
-            Cat
-          </button>
-          <button
-            type="button"
-            class="w-32 block bg-gray-300 py-2 text-center rounded-md"
-            @click="tab = 'dog'"
-            :class="{ 'active bg-blue-500' : tab === 'dog' }"
-          >
-            Dog
-          </button>
-        </div>
-        <div
-          class="grid grid-cols-3 gap-2"
-          x-data="{modal : false, headline: '', description : '', url: 'https://google.de'}"
-        >
-          <figure
-            x-show="tab === 'cat' || tab === 'all'"
-            class="cursor-pointer overflow-hidden"
-            @click="modal = true, headline = 'Cat 1 Headline', description = 'description from cat 1', url='https://www.google.com/search?q=süße katzen'"
-          >
-            <img
-              src="https://picsum.photos/id/40/600/400"
-              alt=""
-              title=""
-              class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
-            />
-          </figure>
-          <figure
-            x-show="tab === 'dog' || tab === 'all'"
-            class="cursor-pointer overflow-hidden"
-            @click="modal = true, headline = 'Dog 1 Headline', description = 'description from dog 1', url='https://www.google.com/search?q=süße hunde'"
-          >
-            <img
-              src="https://picsum.photos/id/659/600/400"
-              alt=""
-              title=""
-              class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
-            />
-          </figure>
-          <figure
-            x-show="tab === 'cat' || tab === 'all'"
-            class="cursor-pointer overflow-hidden"
-            @click="modal = true, headline = 'Cat 2 Headline', description = 'ddescription from cat 2', url='katzen'"
-          >
-            <img
-              src="https://picsum.photos/id/237/600/400"
-              alt=""
-              title=""
-              class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
-            />
-          </figure>
-          <figure
-            x-show="tab === 'dog' || tab === 'all'"
-            class="cursor-pointer overflow-hidden"
-            @click="modal = true, headline = 'Dog 2 Headline', description = 'description from dog 2', url='https://www.google.com/search?q=hunde'"
-          >
-            <img
-              src="https://picsum.photos/id/1025/600/400"
-              alt=""
-              title=""
-              class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
-            />
-          </figure>
-          <figure
-            x-show="tab === 'cat' || tab === 'all'"
-            class="cursor-pointer overflow-hidden"
-            @click="modal = true, headline = 'Cat 3 Headline', description = 'description from cat 3', url='https://www.google.com/search?q=cats'"
-          >
-            <img
-              src="https://picsum.photos/id/593/600/400"
-              alt=""
-              title=""
-              class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
-            />
-          </figure>
-          <figure
-            x-show="tab === 'dog' || tab === 'all'"
-            class="cursor-pointer overflow-hidden"
-            @click="modal = true, headline = 'Dog 3 Headline', description = 'description from dog 3', url='https://www.google.com/search?q=dogs' "
-          >
-            <img
-              src="https://picsum.photos/id/1062/600/400"
-              alt=""
-              title=""
-              class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
-            />
-          </figure>
-          <figure
-            x-show="tab === 'dog' || tab === 'all'"
-            class="cursor-pointer overflow-hidden"
-            @click="modal = true, headline = 'Dog 2 Headline', description = 'description from dog 2', url='https://www.google.com/search?q=hunde'"
-          >
-            <img
-              src="https://picsum.photos/id/1025/600/400"
-              alt=""
-              title=""
-              class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
-            />
-          </figure>
-          <figure
-            x-show="tab === 'cat' || tab === 'all'"
-            class="cursor-pointer overflow-hidden"
-            @click="modal = true, headline = 'Cat 3 Headline', description = 'description from cat 3', url='https://www.google.com/search?q=cats'"
-          >
-            <img
-              src="https://picsum.photos/id/593/600/400"
-              alt=""
-              title=""
-              class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
-            />
-          </figure>
-          <figure
-            x-show="tab === 'dog' || tab === 'all'"
-            class="cursor-pointer overflow-hidden"
-            @click="modal = true, headline = 'Dog 3 Headline', description = 'description from dog 3', url='https://www.google.com/search?q=dogs' "
-          >
-            <img
-              src="https://picsum.photos/id/1062/600/400"
-              alt=""
-              title=""
-              class="block w-full hover:scale-125 transition-all duration-300 ease-linear"
-            />
-          </figure>
-
-          <div
-            x-show="modal"
-            class="fixed top-0 right-0 bottom-0 left-0 bg-black bg-opacity-50 z-10 flex justify-center items-center"
-          >
-            <div
-              class="w-96 bg-white relative z-20 rounded-md py-7 px-5"
-              @click.outside="modal = false"
+    <main>
+      <section class="p-4">
+        <div class="container mx-auto py-10">
+          <div class="flex justify-center mb-6 space-x-4">
+            <button
+              class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md active"
+              data-filter="all"
             >
-              <button
-                @click.prevent="modal = false"
-                type="button"
-                class="absolute top-1 right-1 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex justify-center items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-              <h2 class="text-2xl font-bold mb-3" x-text="headline">
-                Lorem, ipsum dolor.
-              </h2>
-              <p class="text-gray-600 mb-4" x-text="description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Expedita autem saepe corrupti voluptatibus enim! Cumque minima
-                earum nemo quisquam vero sed ipsa nam labore inventore
-                laboriosam blanditiis, laudantium accusamus adipisci!
-              </p>
-              <a
-                x-bind:href="url"
-                target="_blank"
-                class="mt-5 text-blue-500 font-bold"
-                >lorem...</a
-              >
-            </div>
+              All
+            </button>
+            <button
+              class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md"
+              data-filter="event"
+            >
+              Event
+            </button>
+            <button
+              class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md"
+              data-filter="hall"
+            >
+              Hall
+            </button>
+            <button
+              class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md"
+              data-filter="dining"
+            >
+              Dining
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a
+              href="https://placekitten.com/400/300"
+              data-fancybox="gallery"
+              data-caption="Event 1"
+              class="gallery-item event overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="https://placekitten.com/400/300"
+                alt="Event 1"
+                class="w-full h-auto all transition-all hover:scale-125 duration-300 ease-linear"
+              />
+            </a>
+            <a
+              href="https://placekitten.com/401/300"
+              data-fancybox="gallery"
+              data-caption="hall 1"
+              class="gallery-item hall overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="https://placekitten.com/401/300"
+                alt="hall 1"
+                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+              />
+            </a>
+            <a
+              href="https://placekitten.com/402/300"
+              data-fancybox="gallery"
+              data-caption="Dining 1"
+              class="gallery-item dining overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="https://placekitten.com/402/300"
+                alt="Dining 1"
+                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+              />
+            </a>
+            <a
+              href="https://placekitten.com/403/300"
+              data-fancybox="gallery"
+              data-caption="Event 2"
+              class="gallery-item event overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="https://placekitten.com/403/300"
+                alt="Event 2"
+                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+              />
+            </a>
+            <a
+              href="https://placekitten.com/404/300"
+              data-fancybox="gallery"
+              data-caption="hall 2"
+              class="gallery-item hall overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="https://placekitten.com/404/300"
+                alt="hall 2"
+                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+              />
+            </a>
+            <a
+              href="https://placekitten.com/405/300"
+              data-fancybox="gallery"
+              data-caption="Dining 2"
+              class="gallery-item dining overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="https://placekitten.com/405/300"
+                alt="Dining 2"
+                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+              />
+            </a>
+            <a
+              href="https://placekitten.com/406/300"
+              data-fancybox="gallery"
+              data-caption="Event 3"
+              class="gallery-item event overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="https://placekitten.com/406/300"
+                alt="Event 3"
+                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+              />
+            </a>
+            <a
+              href="https://placekitten.com/407/300"
+              data-fancybox="gallery"
+              data-caption="hall 3"
+              class="gallery-item hall overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="https://placekitten.com/407/300"
+                alt="hall 3"
+                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+              />
+            </a>
+            <a
+              href="https://placekitten.com/408/300"
+              data-fancybox="gallery"
+              data-caption="Dining 3"
+              class="gallery-item dining overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="https://placekitten.com/408/300"
+                alt="Dining 3"
+                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+              />
+            </a>
           </div>
         </div>
-      </div>
+      </section>
     </main>
+
+    <footer id="footer"></footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- gallery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+    <script src="./js/gallery.js"></script>
+    <script src="./js/app.js"></script>
   </body>
-  <!-- gallery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.8.1/cdn.js"></script>
 </html>
