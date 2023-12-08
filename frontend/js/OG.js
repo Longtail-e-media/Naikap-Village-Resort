@@ -1,6 +1,10 @@
-// function setupNavbar() {
-//   function initializeNavbar() {
-//     // Burger menus
+// $(window).on("load", function () {
+//   $("#navbar").load("navbar.html");
+//   $("#footer").load("footer.html");
+
+//   // Burger menus
+//   document.addEventListener("DOMContentLoaded", function () {
+//     // open
 //     const burger = document.querySelectorAll(".navbar-burger");
 //     const menu = document.querySelectorAll(".navbar-menu");
 
@@ -37,51 +41,41 @@
 //         });
 //       }
 //     }
+//   });
+
+//   function handleNavLinkClick(link) {
+//     document.querySelectorAll("nav a").forEach((navLink) => {
+//       navLink.classList.remove("bg-[#6b7e42]");
+//     });
+
+//     link.classList.add("bg-[#6b7e42]");
 //   }
 
-//   fetch("navbar.html")
-//     .then((response) => response.text())
-//     .then((html) => {
-//       document.getElementById("navbar").innerHTML = html;
-//       initializeNavbar();
-//     });
+//   const navbar = document.querySelector("nav");
+//   const logo = document.querySelector(".logo");
 
-//   fetch("footer.html")
-//     .then((response) => response.text())
-//     .then((html) => {
-//       document.getElementById("footer").innerHTML = html;
-//     });
-
-//   $(window).on("load", function () {
-//     function handleNavLinkClick(link) {
-//       document.querySelectorAll("nav a").forEach((navLink) => {
-//         navLink.classList.remove("bg-[#6b7e42]");
-//       });
-
-//       link.classList.add("bg-[#6b7e42]");
+//   window.addEventListener("scroll", () => {
+//     if (window.scrollY > 0) {
+//       navbar.style.backgroundColor = "rgba(0, 0, 0, 0.25)";
+//       navbar.classList.add("backdrop-blur-md");
+//     } else {
+//       navbar.style.backgroundColor = "transparent";
+//       navbar.classList.remove("backdrop-blur-md");
 //     }
-
-//     const navbar = document.querySelector("nav");
-//     const logo = document.querySelector(".logo");
-
-//     window.addEventListener("scroll", () => {
-//       if (window.scrollY > 0) {
-//         navbar.style.backgroundColor = "rgba(0, 0, 0, 0.25)";
-//         navbar.classList.add("backdrop-blur-md");
-//         logo.classList.remove("grayscale");
-//         logo.style.transform = "scale(0.75)";
-//       } else {
-//         navbar.style.backgroundColor = "transparent";
-//         navbar.classList.remove("backdrop-blur-md");
-//         logo.classList.add("grayscale");
-//         logo.style.transform = "scale(1)";
-//       }
-//     });
 //   });
-// }
+//   window.addEventListener("scroll", () => {
+//     if (window.scrollY > 0) {
+//       logo.classList.remove("grayscale");
+//       logo.style.transform = "scale(0.75)";
+//     } else {
+//       logo.classList.add("grayscale");
+//       logo.style.transform = "scale(1)";
+//     }
+//   });
+// });
 
-// document.addEventListener("DOMContentLoaded", setupNavbar);
-
+// !! API Method
+// window.onload = function () {
 fetch("navbar.html")
   .then((response) => response.text())
   .then((html) => {
