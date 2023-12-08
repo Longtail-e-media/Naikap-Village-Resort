@@ -149,20 +149,18 @@ $(window).on("load", function () {
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
-      navbar.style.backgroundColor = "rgba(0, 0, 0, 0.25)";
-      navbar.classList.add("backdrop-blur-md");
+      navbar.classList.add("backdrop-blur-sm");
     } else {
-      navbar.style.backgroundColor = "transparent";
-      navbar.classList.remove("backdrop-blur-md");
+      navbar.classList.remove("backdrop-blur-sm");
     }
   });
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
-      logo.classList.remove("grayscale");
+      // logo.classList.remove("grayscale");
       logo.style.transform = "scale(0.75)";
     } else {
-      logo.classList.add("grayscale");
+      // logo.classList.add("grayscale");
       logo.style.transform = "scale(1)";
     }
   });
