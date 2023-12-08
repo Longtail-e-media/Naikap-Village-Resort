@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="w-full px-4 sm:w-1/2 lg:w-3/12">
-        <div class="w-full mb-10">
+        <div class="hidden md:block w-full mb-10">
           <h4 class="text-lg font-semibold text-dark mb-9">
             Quick Links
             <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
@@ -106,7 +106,7 @@
               </a>
             </li>
           </ul>
-          <div class="flex items-start md:gap-2 flex-row mt-6">
+          <div class="flex items-start md:gap-2 md:flex-col xl:flex-row mt-6">
             <a
               href="https://www.facebook.com/Naikaphospitality"
               target="_blank"
@@ -144,44 +144,30 @@
         <div
           class="flex items-center flex-col justify-between md:block w-full md:mb-10"
         >
-          <div class="flex flex-col items-start justify-center gap-4">
-            <div class="flex items-center justify-between gap-4">
-              <a
-                href="https://www.tripadvisor.com/Hotel_Review-g293890-d7195928-Reviews-Naikap_Village_Resort-Kathmandu_Kathmandu_Valley_Bagmati_Zone_Central_Region.html"
-              >
-                <!-- <img src="./svg/tripadvisor.svg" alt="Tripadvisor"> -->
-                <p>Tripadvisor</p>
-              </a>
-              <a
-                href="https://ar.trivago.com/en-145/oar/hotel-naikap-village-resort-kathmandu?search=100-3808374"
-              >
-                <!-- <img src="./svg/trivago.svg" alt="trivago"> -->
-                <p>Trivago</p>
-              </a>
-              <a
-                href="https://www.agoda.com/naikap-village-resort/hotel/kathmandu-np.html?cid=1844104&ds=zTLIWoMcKozoB%2FHT"
-                >
-                <!-- <img src="./svg/agoda.svg" alt="Agoda"> -->
-                <p>Agoda</p>
-              </a>
-            </div>
-            <div class="flex items-center justify-between gap-4">
-              <a
-                href="https://www.makemytrip.com/hotels-international/nepal/kathmandu-hotels/naikap_village_resort-details.html"
-              >
-                <p>Makemytrip</p>
-              </a>
-              <a
-                href="https://www.expedia.com/Kathmandu-Hotels-Naikap-Village-Resort.h11889782.Hotel-Information"
-              >
-                <p>Expedia</p>
-              </a>
-              <a
-                href="https://www.goibibo.com/hotels-international/naikap-village-resort-hotel-in-kathmandu-8521458342588536344/"
-              >
-                <p>Goibibo</p>
-              </a>
-            </div>
+          <div
+            class="flex items-start md:gap-2 md:flex-col xl:flex-row md:mb-6"
+          >
+            <a
+              href="https://www.tripadvisor.com/Hotel_Review-g293890-d7195928-Reviews-Naikap_Village_Resort-Kathmandu_Kathmandu_Valley_Bagmati_Zone_Central_Region.html"
+              target="_blank"
+              class="flex items-center justify-center w-24 h-24 transition-all duration-200 ease-in-out"
+            >
+              <img src="./svg/tripadvisor.svg" alt="tripadvisor" />
+            </a>
+            <a
+              href="https://ar.trivago.com/en-145/oar/hotel-naikap-village-resort-kathmandu?search=100-3808374"
+              target="_blank"
+              class="flex items-center justify-center w-32 h-15 transition-all duration-200 ease-in-out scale-50"
+            >
+              <img src="./svg/trivago.svg" alt="trivago" />
+            </a>
+            <a
+              href="https://www.agoda.com/naikap-village-resort/hotel/kathmandu-np.html?cid=1844104&ds=zTLIWoMcKozoB%2FHT"
+              target="_blank"
+              class="flex items-center justify-center w-24 h-24 transition-all duration-200 ease-in-out"
+            >
+              <img src="./svg/agoda.svg" alt="agoda" />
+            </a>
           </div>
         </div>
       </div>
@@ -197,7 +183,7 @@
         </p>
       </div>
       <div class="flex items-center justify-between gap-4 mt-5 md:mt-0">
-        <h4 class="uppercase font-bold flex items-center justify-between gap-4">We accept</h4>
+        <h4 class="flex items-center justify-between gap-4">We accept</h4>
         <ul class="flex items-center justify-between gap-4">
           <li>
             <a href="#" target="_blank">
