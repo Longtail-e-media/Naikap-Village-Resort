@@ -158,8 +158,10 @@ $(window).on("load", function () {
   window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
       // logo.classList.remove("grayscale");
+      logo.style.backgroundColor = "transparent";
       logo.style.transform = "scale(0.75)";
     } else {
+      logo.style.backgroundColor = "#f5f5dc";
       // logo.classList.add("grayscale");
       logo.style.transform = "scale(1)";
     }
