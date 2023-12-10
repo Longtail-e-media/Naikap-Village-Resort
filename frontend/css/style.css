@@ -16,3 +16,13 @@
     @apply inline-block text-base leading-loose text-body-color hover:underline;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  @layer components {
+    .check {
+      /* background-attachment: scroll; */
+      background-size: 100%;
+      display: none;
+    }
+  }
+}
