@@ -1,3 +1,4 @@
+//gallery
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,16 +20,50 @@
       }
     </style>
   </head>
-  <body class="bg-gray-800 font-serif">
+  <body class="bg-[#6b7e42] font-serif">
     <header id="navbar"></header>
 
     <section
-      class="bg-[url('https://images.unsplash.com/photo-1523380744952-b7e00e6e2ffa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] w-full h-[60vh] bg-fixed bg-center bg-no-repeat bg-cover"
-    ></section>
-    <main>
-      <section class="p-4">
-        <div class="container mx-auto py-10">
-          <div class="flex justify-center mb-6 space-x-4">
+      class="bg-[url('./img/IMG_1498.webp')] w-full h-[60vh] bg-fixed bg-bottom bg-no-repeat bg-contain md:bg-cover"
+    >
+      <img
+        src="./img/IMG_1498.webp"
+        alt="A beautiful night view"
+        class="md:hidden w-full h-[65vh] object-cover"
+      />
+    </section>
+
+    <main class="my-10 p-4">
+      <div class="flex flex-col items-center justify-center mt-5">
+        <h2
+          class="text-2xl md:text-4xl font-bold uppercase text-[#f5f5dc] mt-2"
+        >
+          Gallery
+        </h2>
+        <!-- <span class="font-bold text-gray-800/80"
+          >Great rooms are at your service.
+        </span> -->
+        <div class="text-center">
+          <span
+            class="inline-block w-1 h-1 rounded-full bg-[#f5f5dc] ml-1"
+          ></span>
+          <span
+            class="inline-block w-3 h-1 rounded-full bg-[#f5f5dc] ml-1"
+          ></span>
+          <span class="inline-block w-40 h-1 rounded-full bg-[#f5f5dc]"></span>
+          <span
+            class="inline-block w-3 h-1 rounded-full bg-[#f5f5dc] ml-1"
+          ></span>
+          <span
+            class="inline-block w-1 h-1 rounded-full bg-[#f5f5dc] ml-1"
+          ></span>
+        </div>
+      </div>
+      <div class="container mx-auto py-5">
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-4 my-7"
+        >
+          <div class="flex items-center justify-center space-x-4 h-1/2">
             <button
               class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md active"
               data-filter="all"
@@ -37,15 +72,15 @@
             </button>
             <button
               class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md"
-              data-filter="event"
+              data-filter="room"
             >
-              Event
+              Room
             </button>
             <button
               class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md"
-              data-filter="hall"
+              data-filter="views"
             >
-              Hall
+              Views
             </button>
             <button
               class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md"
@@ -54,119 +89,118 @@
               Dining
             </button>
           </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a
-              href="https://placekitten.com/400/300"
-              data-fancybox="gallery"
-              data-caption="Event 1"
-              class="gallery-item event overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            >
-              <img
-                src="https://placekitten.com/400/300"
-                alt="Event 1"
-                class="w-full h-auto all transition-all hover:scale-125 duration-300 ease-linear"
-              />
-            </a>
-            <a
-              href="https://placekitten.com/401/300"
-              data-fancybox="gallery"
-              data-caption="hall 1"
-              class="gallery-item hall overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            >
-              <img
-                src="https://placekitten.com/401/300"
-                alt="hall 1"
-                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-              />
-            </a>
-            <a
-              href="https://placekitten.com/402/300"
-              data-fancybox="gallery"
-              data-caption="Dining 1"
-              class="gallery-item dining overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            >
-              <img
-                src="https://placekitten.com/402/300"
-                alt="Dining 1"
-                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-              />
-            </a>
-            <a
-              href="https://placekitten.com/403/300"
-              data-fancybox="gallery"
-              data-caption="Event 2"
-              class="gallery-item event overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            >
-              <img
-                src="https://placekitten.com/403/300"
-                alt="Event 2"
-                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-              />
-            </a>
-            <a
-              href="https://placekitten.com/404/300"
-              data-fancybox="gallery"
-              data-caption="hall 2"
-              class="gallery-item hall overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            >
-              <img
-                src="https://placekitten.com/404/300"
-                alt="hall 2"
-                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-              />
-            </a>
-            <a
-              href="https://placekitten.com/405/300"
-              data-fancybox="gallery"
-              data-caption="Dining 2"
-              class="gallery-item dining overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            >
-              <img
-                src="https://placekitten.com/405/300"
-                alt="Dining 2"
-                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-              />
-            </a>
-            <a
-              href="https://placekitten.com/406/300"
-              data-fancybox="gallery"
-              data-caption="Event 3"
-              class="gallery-item event overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            >
-              <img
-                src="https://placekitten.com/406/300"
-                alt="Event 3"
-                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-              />
-            </a>
-            <a
-              href="https://placekitten.com/407/300"
-              data-fancybox="gallery"
-              data-caption="hall 3"
-              class="gallery-item hall overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            >
-              <img
-                src="https://placekitten.com/407/300"
-                alt="hall 3"
-                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-              />
-            </a>
-            <a
-              href="https://placekitten.com/408/300"
-              data-fancybox="gallery"
-              data-caption="Dining 3"
-              class="gallery-item dining overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            >
-              <img
-                src="https://placekitten.com/408/300"
-                alt="Dining 3"
-                class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-              />
-            </a>
-          </div>
         </div>
-      </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a
+            href="./img/IMG_1390.webp"
+            data-fancybox="gallery"
+            data-caption="Room 1"
+            class="gallery-item room overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="./img/IMG_1390.webp"
+              alt="Room 1"
+              class="w-full h-auto all transition-all hover:scale-125 duration-300 ease-linear"
+            />
+          </a>
+          <a
+            href="./img/IMG_1459.webp"
+            data-fancybox="gallery"
+            data-caption="views 1"
+            class="gallery-item views overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="./img/IMG_1459.webp"
+              alt="views 1"
+              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+            />
+          </a>
+          <a
+            href="./img/IMG_1541.webp"
+            data-fancybox="gallery"
+            data-caption="Dining 1"
+            class="gallery-item dining overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="./img/IMG_1541.webp"
+              alt="Dining 1"
+              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+            />
+          </a>
+          <a
+            href="./img/IMG_1392.webp"
+            data-fancybox="gallery"
+            data-caption="Room 2"
+            class="gallery-item room overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="./img/IMG_1392.webp"
+              alt="Room 2"
+              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+            />
+          </a>
+          <a
+            href="./img/IMG_1708.webp"
+            data-fancybox="gallery"
+            data-caption="views 2"
+            class="gallery-item views overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="./img/IMG_1708.webp"
+              alt="views 2"
+              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+            />
+          </a>
+          <a
+            href="./img/IMG_1516.webp"
+            data-fancybox="gallery"
+            data-caption="Dining 2"
+            class="gallery-item dining overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="./img/IMG_1516.webp"
+              alt="Dining 2"
+              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+            />
+          </a>
+          <a
+            href="./img/IMG_1383.webp"
+            data-fancybox="gallery"
+            data-caption="Room 3"
+            class="gallery-item room overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="./img/IMG_1383.webp"
+              alt="Room 3"
+              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+            />
+          </a>
+          <a
+            href="./img/IMG_1498.webp"
+            data-fancybox="gallery"
+            data-caption="views 3"
+            class="gallery-item views overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="./img/IMG_1498.webp"
+              alt="views 3"
+              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+            />
+          </a>
+          <a
+            href="./img/IMG_1463.webp"
+            data-fancybox="gallery"
+            data-caption="views 4"
+            class="gallery-item views overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="./img/IMG_1463.webp"
+              alt="views 4"
+              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
+            />
+          </a>
+        </div>
+      </div>
     </main>
 
     <footer id="footer"></footer>
