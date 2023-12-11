@@ -75,13 +75,35 @@
               class="shadow-md border border-gray-200 rounded-lg bg-gray-800"
             >
               <div class="overflow-hidden">
-                <a href="#">
-                  <img
-                    class="rounded-t-lg w-full h-96 object-cover block hover:scale-125 transition-all duration-300 ease-linear"
-                    src="./img/IMG_1383.webp"
-                    alt="Standard Room"
-                  />
-                </a>
+                <div class="owl-carousel owl-theme">
+                  <div class="item">
+                    <a
+                      href="./img/IMG_1383.webp"
+                      data-fancybox="gallery"
+                      data-caption="Standard Room"
+                    >
+                      <img
+                        class="rounded-t-lg w-full h-96 object-cover block"
+                        src="./img/IMG_1383.webp"
+                        alt="Standard Room"
+                      />
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a
+                      href="./img/IMG_1392.webp"
+                      data-fancybox="gallery"
+                      data-caption="Standard Room"
+                    >
+                      <img
+                        class="rounded-t-lg w-full h-96 object-cover block"
+                        src="./img/IMG_1392.webp"
+                        alt="Standard Room"
+                      />
+                    </a>
+                  </div>
+                  <!-- Add more items for additional images -->
+                </div>
               </div>
               <div class="p-5">
                 <div class="flex items-center justify-between">
@@ -184,6 +206,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- <script async src="./js/app.js"></script> -->
+
+    <!-- Owl Carousel Script -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script src="./js/room.js"></script>
     <script async defer src="./js/app.js"></script>
   </body>
 </html>

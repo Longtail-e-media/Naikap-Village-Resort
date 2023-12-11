@@ -167,3 +167,19 @@ $(window).on("load", function () {
     }
   });
 });
+
+// Rooms carousel
+$(document).ready(function () {
+  $(".owl-carousel").owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+  });
+
+  lightbox.option({
+    resizeDuration: 200,
+    wrapAround: true,
+  });
+});
