@@ -183,3 +183,6 @@ $(document).ready(function () {
     wrapAround: true,
   });
 });
+
+// aos animation
+AOS.init();
