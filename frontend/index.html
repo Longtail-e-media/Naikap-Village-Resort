@@ -29,7 +29,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="dist/output.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@next/dist/aos.css"
+      media="only screen and (min-width:500px)"
+    />
+
     <style>
+      html {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
       /* .bg-overlay::after {
         content: "";
         position: absolute;
@@ -51,145 +61,24 @@
       }
     </style>
   </head>
-  <body class="overflow-x-hidden bg-[#6b7e42] max-w-[100vw]">
+  <body class="overflow-x-hidden bg-[#6b7e42]">
     <header id="navbar"></header>
 
     <!-- ====== Hero Section -->
-
-    <section
-      class="overflow-hidden"
-      data-aos="zoom-out-up"
-      data-aos-delay="200"
-      data-autoplay=""
-    >
+    <section data-aos="zoom-out-up" data-aos-delay="200" data-autoplay="">
       <div id="main-slider" class="owl-carousel owl-theme relative">
         <div
           class="bg-overlay relative w-full min-h-[400px] md:h-screen bg-[url('./img/IMG_1459.webp')] bg-no-repeat bg-cover bg-center"
-        >
-          <div
-            class="grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
-          >
-            <!-- Content -->
-            <!-- <div class="flex flex-col gap-5 md:gap-8">
-              <div class="flex flex-col gap-4">
-                <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold">
-                  Mukunda - Shotru - Trailer
-                </h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
-                <div class="flex gap-3">
-                  <p>1h : 56min</p>
-                  <p>
-                    <strong class="font-bold">Genres:</strong>
-                    <span>Action</span>
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-row items-center gap-3 md:gap-4">
-                <a href="single-video.html" class="btn btn-secondary"
-                  >Watch Now <i class="pl-2 fa-solid fa-play"></i
-                ></a>
-                <button class="btn btn-primary">
-                  Add To List <i class="pl-2 fa-solid fa-plus"></i>
-                </button>
-                <button
-                  class="outline-icon w-10 h-10 border border-acent rounded-full flex items-center justify-center"
-                >
-                  <i class="fa-solid fa-share-nodes"></i>
-                </button>
-              </div>
-            </div> -->
-            <!-- End Content -->
-          </div>
-        </div>
+        ></div>
         <div
           class="relative w-full min-h-[400px] md:h-screen bg-[url('./img/IMG_1390.webp')] bg-no-repeat bg-cover bg-center"
-        >
-          <div
-            class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
-          >
-            <!-- <div class="flex flex-col gap-5 md:gap-8">
-              <div class="flex flex-col gap-4">
-                <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold">
-                  Mukunda - Shotru - Trailer
-                </h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
-                <div class="flex gap-3">
-                  <p>1h : 56min</p>
-                  <p>
-                    <strong class="font-bold">Genres:</strong>
-                    <span>Action</span>
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-row items-center gap-3 md:gap-4">
-                <a href="single-video.html" class="btn btn-secondary"
-                  >Watch Now <i class="pl-2 fa-solid fa-play"></i
-                ></a>
-                <button class="btn btn-primary">
-                  Add To List <i class="pl-2 fa-solid fa-plus"></i>
-                </button>
-                <button
-                  class="outline-icon w-10 h-10 border border-acent rounded-full flex items-center justify-center"
-                >
-                  <i class="fa-solid fa-share-nodes"></i>
-                </button>
-              </div>
-            </div> -->
-          </div>
-        </div>
+        ></div>
         <div
           class="relative w-full min-h-[400px] md:h-screen bg-[url('./img/IMG_1588.webp')] bg-no-repeat bg-cover bg-center"
         >
           <div
             class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
-          >
-            <!-- <div class="flex flex-col gap-5 md:gap-8">
-              <div class="flex flex-col gap-4">
-                <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold">
-                  Mukunda - Shotru - Trailer
-                </h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
-                <div class="flex gap-3">
-                  <p>1h : 56min</p>
-                  <p>
-                    <strong class="font-bold">Genres:</strong>
-                    <span>Action</span>
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-row items-center gap-3 md:gap-4">
-                <a href="single-video.html" class="btn btn-secondary"
-                  >Watch Now <i class="pl-2 fa-solid fa-play"></i
-                ></a>
-                <button class="btn btn-primary">
-                  Add To List <i class="pl-2 fa-solid fa-plus"></i>
-                </button>
-                <button
-                  class="outline-icon w-10 h-10 border border-acent rounded-full flex items-center justify-center"
-                >
-                  <i class="fa-solid fa-share-nodes"></i>
-                </button>
-              </div>
-            </div> -->
-          </div>
+          ></div>
         </div>
 
         <div
@@ -197,42 +86,7 @@
         >
           <div
             class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
-          >
-            <!-- <div class="flex flex-col gap-5 md:gap-8">
-              <div class="flex flex-col gap-4">
-                <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold">
-                  Mukunda - Shotru - Trailer
-                </h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
-                <div class="flex gap-3">
-                  <p>1h : 56min</p>
-                  <p>
-                    <strong class="font-bold">Genres:</strong>
-                    <span>Action</span>
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-row items-center gap-3 md:gap-4">
-                <a href="single-video.html" class="btn btn-secondary"
-                  >Watch Now <i class="pl-2 fa-solid fa-play"></i
-                ></a>
-                <button class="btn btn-primary">
-                  Add To List <i class="pl-2 fa-solid fa-plus"></i>
-                </button>
-                <button
-                  class="outline-icon w-10 h-10 border border-acent rounded-full flex items-center justify-center"
-                >
-                  <i class="fa-solid fa-share-nodes"></i>
-                </button>
-              </div>
-            </div> -->
-          </div>
+          ></div>
         </div>
       </div>
       <div

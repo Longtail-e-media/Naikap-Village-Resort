@@ -1,4 +1,3 @@
-// Hero Slider
 const main_slider = $("#main-slider");
 main_slider.owlCarousel({
   rtl: false,
@@ -6,8 +5,10 @@ main_slider.owlCarousel({
   nav: false,
   dots: false,
   autoplay: true,
-  autoplayTimeout: 3000,
+  autoplayTimeout: 5000,
+  autoplaySpeed: 1000,
   autoplayHoverPause: false,
+  animateOut: "fadeOut",
   responsive: {
     0: {
       items: 1,
@@ -23,7 +24,8 @@ slider_thumb.owlCarousel({
   nav: false,
   dots: false,
   autoplay: true,
-  autoplayTimeout: 3000,
+  autoplayTimeout: 5000,
+  autoplaySpeed: 1000,
   autoplayHoverPause: false,
   responsive: {
     0: {
@@ -32,17 +34,28 @@ slider_thumb.owlCarousel({
   },
 });
 
-// Custom Navigation Events
 $(".customNextBtn").click(function () {
   main_slider.trigger("next.owl.carousel");
-});
-$(".customPrevBtn").click(function () {
-  main_slider.trigger("prev.owl.carousel");
-});
-
-$(".customNextBtn").click(function () {
   slider_thumb.trigger("next.owl.carousel");
 });
+
 $(".customPrevBtn").click(function () {
+  main_slider.trigger("prev.owl.carousel");
   slider_thumb.trigger("prev.owl.carousel");
+});
+
+main_slider.on("translate.owl.carousel", function (event) {
+  $(".owl-item.active", main_slider)
+    .find("[data-animation]")
+    .each(function () {
+      $(this).removeClass("animated " + $(this).data("animation"));
+    });
+});
+
+main_slider.on("translated.owl.carousel", function (event) {
+  $(".owl-item.active", main_slider)
+    .find("[data-animation]")
+    .each(function () {
+      $(this).addClass("animated " + $(this).data("animation"));
+    });
 });
