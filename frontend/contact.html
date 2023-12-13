@@ -30,9 +30,7 @@
               <div
                 class="relative z-[1] rounded-lg px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] bg-[hsla(0,0%,5%,0.7)] shadow-black/20 md:px-12 lg:-mr-14"
               >
-                <h2 class="text-3xl font-bold text-[#f5f5dc]">
-                  Write to us
-                </h2>
+                <h2 class="text-3xl font-bold text-[#f5f5dc]">Write to us</h2>
                 <div class="text-center mb-10">
                   <span
                     class="inline-block w-1 h-1 rounded-full bg-[#f5f5dc] ml-1"
@@ -145,7 +143,12 @@
         </div>
       </section>
       <div class="flex flex-col items-center justify-center gap-5 mt-10">
-        <div class="">
+        <div
+          class=""
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           <h5
             class="text-center text-xl md:text-4xl font-bold uppercase text-[#f5f5dc]"
           >
@@ -169,7 +172,11 @@
             ></span>
           </div>
         </div>
-        <div>
+        <div
+          data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           <img src="./svg/mapQRcode.svg" alt="QR Code for Google Maps" />
         </div>
       </div>
@@ -178,6 +185,9 @@
     <footer id="footer"></footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- aos animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- <script async src="./js/app.js"></script> -->
     <script async defer src="./js/app.js"></script>
   </body>
