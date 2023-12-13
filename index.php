@@ -2,7 +2,7 @@
 
 $folderName = "frontend";
 
-include "{$folderName}/js/app.js";
+include '{$folderName}/js/app.js';
 
 
 $template = "{$folderName}/index.html";
