@@ -51,7 +51,7 @@
       }
     </style>
   </head>
-  <body class="overflow-x-hidden font-serif bg-[#6b7e42]">
+  <body class="overflow-x-hidden bg-[#6b7e42] max-w-[100vw]">
     <header id="navbar"></header>
 
     <!-- ====== Hero Section -->
@@ -292,7 +292,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div data-aos="fade-right" data-aos-delay="100">
           <div class="py-2">
-            <h3 class="text-4xl font-bold uppercase pt-5 text-[#f5f5dc]">
+            <h3 class="text-4xl font-bold uppercase text-[#f5f5dc]">
               About Us
             </h3>
             <span class="font-bold text-[#f5f5dc]/80"
@@ -300,13 +300,14 @@
             >
           </div>
           <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
-          <p class="text-justify text-md mt-5 text-[#f5f5dc]">
+          <p
+            class="text-justify text-md md:text-[1.1rem] mt-5 text-[#f5f5dc] leading-relaxed md:pr-2"
+          >
             Welcome to Naikap Village Resort, one of the best luxurious newly
             built resort located at Purano Naikap, Kathmandu, 15 minutes drive
             from Kalanki Chowk. It's a hub for entertainment destinations and it
             quickly connects to the perfect combination of business and pleasure
-            needs. We embody experience, expertise and excellence as our company
-            is managed by group of tourism professionals.
+            needs.
             <br />
             With beautiful rooms, all the modern amenities,a restaurant, terrace
             dining experience, beautiful garden, we further provide extensive
@@ -393,10 +394,11 @@
                 />
               </a>
             </div>
+
             <div class="p-5">
               <div class="flex items-center justify-between">
                 <a href="#">
-                  <p class="font-bold text-[#ef4c23]">Rs. 2500</p>
+                  <p class="font-bold text-[#ef4c23]">Starting USD 30</p>
                   <h5
                     class="font-bold text-lg md:text-2xl tracking-tight mb-2 text-[#f5f5dc]"
                   >
@@ -429,8 +431,8 @@
                 >
                   <i class="hidden md:block fa-solid fa-maximize text-lg"></i>
                   <div>
-                    <p>Room sizes</p>
-                    <span>200 sq. ft</span>
+                    <p>Room Size</p>
+                    <span>300 sq. ft</span>
                   </div>
                 </div>
                 <div
@@ -438,8 +440,8 @@
                 >
                   <i class="hidden md:block fa-solid fa-bed text-md"></i>
                   <div>
-                    <p>Bedrooms</p>
-                    <span>2 King Size</span>
+                    <p>Bed</p>
+                    <span>King Size</span>
                   </div>
                 </div>
               </div>
@@ -463,16 +465,16 @@
             <div class="p-5">
               <div class="flex items-center justify-between">
                 <a href="./dining.html">
-                  <p class="font-bold text-[#ef4c23]">Our master chef</p>
+                  <p class="font-bold text-[#ef4c23]">Experienced Chef</p>
                   <h5
                     class="flex font-bold text-lg md:text-2xl tracking-tight mb-2 text-[#f5f5dc]"
                   >
-                    Dining
-                    <img
+                    Dining &amp; Bar
+                    <!--<img
                       src="./svg/chef.svg"
                       alt="Chef"
                       class="w-8 h-8 object-contain ml-2"
-                    />
+                    />-->
                   </h5>
                 </a>
                 <a
@@ -490,8 +492,9 @@
                 >
                   <i class="fa-solid fa-utensils hidden md:block text-md"></i>
                   <div>
-                    <p>Serving time</p>
-                    <span>10am - 11pm</span>
+                    <p>Opening Time</p>
+                    <span class="hidden md:block">06:00 AM - 11:00 PM</span>
+                    <span class="md:hidden">06 am - 11 pm</span>
                   </div>
                 </div>
                 <div
@@ -501,7 +504,7 @@
                     class="hidden md:block fa-solid fa-people-roof text-md"
                   ></i>
                   <div>
-                    <p>Occupancies</p>
+                    <p>Occupancy</p>
                     <span>50+ people</span>
                   </div>
                 </div>
@@ -511,7 +514,7 @@
                   <i class="hidden md:block fa-solid fa-bowl-food text-md"></i>
                   <div>
                     <p>Cuisines</p>
-                    <span>Multiple</span>
+                    <span>Multicuisine</span>
                   </div>
                 </div>
               </div>
@@ -535,11 +538,11 @@
             <div class="p-5">
               <div class="flex items-center justify-between">
                 <a href="#">
-                  <p class="font-bold text-[#ef4c23]">Rs. 2500</p>
+                  <p class="font-bold text-[#ef4c23]">We organize</p>
                   <h5
                     class="font-bold text-lg md:text-2xl tracking-tight mb-2 text-[#f5f5dc]"
                   >
-                    Event Hall
+                    Meeting &amp; Events
                   </h5>
                 </a>
                 <a
@@ -620,32 +623,38 @@
                 </a>
               </div>
 
-              <div class="flex items-center justify-between py-2 pr-2 gap-10">
-                <div class="flex flex-col gap-4 text-[#f5f5dc] text-sm w-1/3">
-                  <i class="fa-solid fa-people-group text-md"></i>
-                  <div>
-                    <p>Picnic Spot</p>
-                    <!-- <span>20 spaces</span> -->
-                  </div>
-                </div>
+              <div class="flex items-center justify-between py-2 pr-2">
                 <div
-                  class="flex flex-col items-center justify-center gap-4 text-[#f5f5dc] text-sm w-1/3"
-                >
-                  <i class="fa-solid fa-people-roof text-md"></i>
-                  <div>
-                    <p>Conference & Meeting</p>
-                    <!-- <span>20 spaces</span> -->
-                  </div>
-                </div>
-                <div
-                  class="flex flex-col items-end justify-center gap-4 text-[#f5f5dc] text-sm w-1/3"
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
                 >
                   <i
-                    class="fa-solid fa-champagne-glasses text-md text-center"
+                    class="hidden md:block fa-solid fa-people-group text-md"
                   ></i>
-                  <div class="text-right">
-                    <p>Festival Programs</p>
-                    <!-- <span>20 spaces</span> -->
+                  <div>
+                    <p>We offer</p>
+                    <span>Conference & Meeting</span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i
+                    class="hidden md:block fa-solid fa-champagne-glasses text-lg"
+                  ></i>
+                  <div>
+                    <p>We offer</p>
+                    <span>Festival Packages</span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
+                >
+                  <i
+                    class="hidden md:block fa-solid fa-people-roof text-md"
+                  ></i>
+                  <div>
+                    <p>We offer</p>
+                    <span>Picnic Packages</span>
                   </div>
                 </div>
               </div>
@@ -1119,7 +1128,7 @@
 
     <!-- aos animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <script src="./js/hero.js"></script>
     <script src="./js/gallery.js"></script>
     <script async defer src="./js/app.js"></script>

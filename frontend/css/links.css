@@ -21,3 +21,10 @@
 
 /* aos animation */
 @import url("https://unpkg.com/aos@2.3.1/dist/aos.css");
+
+/* ubuntu */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif;
+}
