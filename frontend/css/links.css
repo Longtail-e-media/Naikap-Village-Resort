@@ -28,6 +28,10 @@
 /* ubuntu */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap");
 
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   font-family: "Nunito", sans-serif;
 }
