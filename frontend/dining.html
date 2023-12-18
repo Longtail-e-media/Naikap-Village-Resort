@@ -24,16 +24,11 @@
     <link rel="stylesheet" href="./css/links.css" />
     <link rel="stylesheet" href="dist/output.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-      .overlay::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 100%;
-        height: 100%;
+      html,
+      body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
       }
     </style>
   </head>
@@ -55,9 +50,7 @@
       <div
         class="container mx-auto mb-0 p-4 md:px-6 bg-white shadow-lg md:rounded-2xl -translate-y-28 md:-translate-y-20"
       >
-        <div
-          class="flex flex-col items-center justify-center mt-5"
-        >
+        <div class="flex flex-col items-center justify-center mt-5">
           <h2 class="text-2xl md:text-4xl font-bold uppercase text-gray-8005">
             Dining
           </h2>
@@ -164,7 +157,9 @@
                       <div
                         class="flex items-center justify-between flex-col md:flex-row gap-0 md:gap-4 text-gray-800 text-md md:text-lg"
                       >
-                        <i class="fa-solid fa-bowl-food text-xl md:text-3xl"></i>
+                        <i
+                          class="fa-solid fa-bowl-food text-xl md:text-3xl"
+                        ></i>
                         <div class="text-center md:text-left">
                           <p>Lunch</p>
                           <span>10:00am - 12:00pm</span>
