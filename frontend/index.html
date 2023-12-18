@@ -57,6 +57,41 @@
       }
     </style>
   </head>
+  
+  <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "109491878578909");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v18.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+  
+  
+  
+  
   <body class="overflow-x-hidden bg-[#6b7e42]">
     <header id="navbar"></header>
 
@@ -960,7 +995,7 @@
 
     <div
       id="whatsapp-icon"
-      class="fixed right-5 bottom-5 z-[99] w-16 h-16 rounded-full bg-white shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-150 ease-in-out"
+      class="fixed right-5 bottom-24 z-[99] w-16 h-16 rounded-full bg-white shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-150 ease-in-out"
     >
       <a href="" class="transform transition-transform scale-110"
         ><i class="fa-brands fa-whatsapp text-[2.5rem] text-green-600"></i
