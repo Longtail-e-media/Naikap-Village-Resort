@@ -57,41 +57,39 @@
       }
     </style>
   </head>
-  
+
   <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
+  <div id="fb-root"></div>
 
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
+  <!-- Your Chat Plugin code -->
+  <div id="fb-customer-chat" class="fb-customerchat"></div>
 
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "109491878578909");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
+  <script>
+    var chatbox = document.getElementById("fb-customer-chat");
+    chatbox.setAttribute("page_id", "109491878578909");
+    chatbox.setAttribute("attribution", "biz_inbox");
+  </script>
 
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v18.0'
-        });
-      };
+  <!-- Your SDK code -->
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: "v18.0",
+      });
+    };
 
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-  
-  
-  
-  
+    (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "facebook-jssdk");
+  </script>
+
   <body class="overflow-x-hidden bg-[#6b7e42]">
     <header id="navbar"></header>
 
@@ -99,13 +97,13 @@
     <section data-aos="zoom-out-up" data-aos-delay="200" data-autoplay="">
       <div id="main-slider" class="owl-carousel owl-theme relative">
         <div
-          class="bg-overlay relative w-full min-h-[400px] md:h-screen bg-[url('./img/IMG_1459.webp')] bg-no-repeat bg-cover bg-center"
+          class="relative w-full min-h-[400px] md:min-h-[500px] lg:h-screen bg-[url('./img/IMG_1459.webp')] bg-no-repeat bg-cover bg-center"
         ></div>
         <div
-          class="relative w-full min-h-[400px] md:h-screen bg-[url('./img/IMG_1390.webp')] bg-no-repeat bg-cover bg-center"
+          class="relative w-full min-h-[400px] md:min-h-[500px] lg:h-screen bg-[url('./img/IMG_1390.webp')] bg-no-repeat bg-cover bg-center"
         ></div>
         <div
-          class="relative w-full min-h-[400px] md:h-screen bg-[url('./img/IMG_1588.webp')] bg-no-repeat bg-cover bg-center"
+          class="relative w-full min-h-[400px] md:min-h-[500px] lg:h-screen bg-[url('./img/IMG_1588.webp')] bg-no-repeat bg-cover bg-center"
         >
           <div
             class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
@@ -113,7 +111,7 @@
         </div>
 
         <div
-          class="relative w-full min-h-[400px] md:h-screen bg-[url('./img/IMG_1541.webp')] bg-no-repeat bg-cover bg-center"
+          class="relative w-full min-h-[400px] md:min-h-[500px] lg:h-screen bg-[url('./img/IMG_1541.webp')] bg-no-repeat bg-cover bg-center"
         >
           <div
             class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
@@ -186,7 +184,7 @@
           </div>
           <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
           <p
-            class="text-justify text-md md:text-[1.1rem] mt-5 text-[#f5f5dc] leading-relaxed md:pr-2"
+            class="text-justify text-md md:text-sm lg:text-[1.1rem] mt-5 text-[#f5f5dc] leading-relaxed md:pr-2"
           >
             Welcome to Naikap Village Resort, one of the best luxurious newly
             built resort located at Purano Naikap, Kathmandu, 15 minutes drive
@@ -775,7 +773,7 @@
         </div>
         <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
       </div>
-      <div class="glide py-8 md:py-12 w-full md:w-4/6 mx-auto">
+      <div class="glide py-8 md:py-12 w-full lg:w-4/6 mx-auto">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             <!-- Testimonial 1 -->
