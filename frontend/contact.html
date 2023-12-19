@@ -24,14 +24,15 @@
     />
     <link rel="manifest" href="./logo/site.webmanifest" />
     <link rel="stylesheet" href="./css/links.css" />
-    <link rel="stylesheet" href="dist/output.css" />
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="dist/output.css" />
   </head>
 
   <body class="bg-[#6b7e42]">
     <header id="navbar"></header>
 
-     <section
+    <section
       class="bg-[url('./img/IMG_1463.webp')] w-full h-[60vh] bg-fixed bg-bottom lg:bg-top xl:bg-bottom bg-no-repeat bg-contain xl:bg-cover"
     >
       <img
@@ -67,11 +68,16 @@
                     class="inline-block w-1 h-1 rounded-full bg-[#f5f5dc] ml-1"
                   ></span>
                 </div>
-                <form class="flex items-center justify-center flex-col gap-10" id="frm_contact" method="post" action="enquery_mail.php">
+                <form
+                  class="flex items-center justify-center flex-col gap-10"
+                  id="frm_contact"
+                  method="post"
+                  action="enquery_mail.php"
+                >
                   <div class="mt-5 relative w-full" data-te-input-wrapper-init>
                     <input
                       type="text"
-                      name="name" 
+                      name="name"
                       class="rounded w-full bg-[#f5f5dc]/20 py-2 px-3 leading-[1.6] text-lg outline-none transition-all duration-200 ease-linear text-[#f5f5dc] border-[#f5f5dc] border-b-2 border-dotted"
                       id=""
                       required
@@ -110,7 +116,7 @@
                   </div>
                   <div class="relative w-full" data-te-input-wrapper-init>
                     <textarea
-                        name="message"
+                      name="message"
                       class="rounded w-full bg-[#f5f5dc]/20 py-2 px-3 leading-[1.6] text-lg outline-none transition-all duration-200 ease-linear text-[#f5f5dc] border-[#f5f5dc] border-b-2 border-dotted"
                       id=""
                       rows="3"
@@ -136,7 +142,11 @@
                   <!--    I am not a robot-->
                   <!--  </label>-->
                   <!--</div>-->
-                    <div id="g-recaptcha-response" class="g-recaptcha col-md-8 form-group" data-sitekey="6LdGEDUpAAAAAFF4vueWfSGbWITXg3NYLrYDqDjS"></div>
+                  <div
+                    id="g-recaptcha-response"
+                    class="g-recaptcha col-md-8 form-group"
+                    data-sitekey="6LdGEDUpAAAAAFF4vueWfSGbWITXg3NYLrYDqDjS"
+                  ></div>
 
                   <button
                     type="submit"
@@ -215,60 +225,59 @@
 
     <!-- <script async src="./js/app.js"></script> -->
     <script async defer src="./js/app.js"></script>
-    
-    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 
-    
-        <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 
-        <script type="text/javascript">
-            jQuery(document).ready(function () {
-                
-
-                
-                jQuery('#frm_contact').validate({
-                    errorElement: 'span',
-                    errorClass: 'validate-has-error',
-                    rules: {
-                        name: {required: true},
-                        contact: {required: true , number:true},
-                        email: {required: true, email: true},
-                        message: {required: true}
-                    },
-                    messages: {
-                        name: {required: "This field is required."},
-                        contact: {required: "This field is required."},
-                        email: {required: "This field is required."},
-                        message: {required: "This field is required."}
-                    },
-                    submitHandler: function (form) {
-                        var recaptcha = $("#g-recaptcha-response").val();
-                        if (recaptcha === "") {
-                            event.preventDefault();
-                            alert("Please check the recaptcha");
-                            return false;
-                        }
-                        var Frmval = jQuery("form#frm_contact").serialize();
-                        jQuery("input#submit").attr("disabled", "true").val('Processing...');
-                        jQuery.ajax({
-                            type: "POST",
-                            dataType: "JSON",
-                            url: "enquiry_mail.php",
-                            data: "action=forcoment&" + Frmval,
-                            success: function (data) {
-                                var msg = eval(data);
-                                jQuery("input#submit").removeAttr("disabled").val('Submit');
-                                jQuery('div#result_msg').html(msg.message).css('display', 'block').fadeOut(8000);
-                                jQuery("form#frm_contact")[0].reset();
-                            }
-                        });
-                        return false;
-                    }
-                })
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        jQuery("#frm_contact").validate({
+          errorElement: "span",
+          errorClass: "validate-has-error",
+          rules: {
+            name: { required: true },
+            contact: { required: true, number: true },
+            email: { required: true, email: true },
+            message: { required: true },
+          },
+          messages: {
+            name: { required: "This field is required." },
+            contact: { required: "This field is required." },
+            email: { required: "This field is required." },
+            message: { required: "This field is required." },
+          },
+          submitHandler: function (form) {
+            var recaptcha = $("#g-recaptcha-response").val();
+            if (recaptcha === "") {
+              event.preventDefault();
+              alert("Please check the recaptcha");
+              return false;
+            }
+            var Frmval = jQuery("form#frm_contact").serialize();
+            jQuery("input#submit")
+              .attr("disabled", "true")
+              .val("Processing...");
+            jQuery.ajax({
+              type: "POST",
+              dataType: "JSON",
+              url: "enquiry_mail.php",
+              data: "action=forcoment&" + Frmval,
+              success: function (data) {
+                var msg = eval(data);
+                jQuery("input#submit").removeAttr("disabled").val("Submit");
+                jQuery("div#result_msg")
+                  .html(msg.message)
+                  .css("display", "block")
+                  .fadeOut(8000);
+                jQuery("form#frm_contact")[0].reset();
+              },
             });
-        </script>
-
-
+            return false;
+          },
+        });
+      });
+    </script>
   </body>
 </html>
