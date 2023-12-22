@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <jcms:site:seotitle/>
+
+    <!-- Fevicon -->
+    <jcms:site:fevicon/>
+    
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css2?family=Barlow&amp;family=Barlow+Condensed&amp;family=Gilda+Display&amp;display=swap'>
+    <link rel="stylesheet" href="css/plugins.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+
+    <jcms:module:header/>
+
+
+
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<jcms:default-banner/>">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left caption mt-90">
+                    <h5>Careers</h5>
+                    <h1>Job Opening</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Careers -->
+    <section class="positions section-padding career-231 bg-cream">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="accordion-box clearfix">
+                        <jcms:module:vacencylist/>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p><small>Please submit a resume and cover letter with compensation history to <b>info@ambassador.com.np</b>.</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <jcms:module:footer/>
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.isotope.v3.0.2.js"></script>
+    <script src="js/pace.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scrollIt.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/YouTubePopUp.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        // Navbar scrolling background
+wind.on("scroll", function () {
+    var bodyScroll = wind.scrollTop(),
+        navbar = $(".navbar"),
+        logo = $(".navbar .logo> img");
+    if (bodyScroll > 100) {
+        navbar.addClass("nav-scroll");
+        logo.attr('src', '<jcms:module:logo-dark/>');
+    } else {
+        navbar.removeClass("nav-scroll");
+        logo.attr('src', '<jcms:module:logo-light/>');
+    }
+});
+</script>
+</body>
+</html>

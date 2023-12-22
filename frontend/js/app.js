@@ -136,6 +136,7 @@ function initializeNavbar() {
 }
 
 $(window).on("load", function () {
+  initializeNavbar();
   function handleNavLinkClick(link) {
     document.querySelectorAll("nav a").forEach((navLink) => {
       navLink.classList.remove("bg-[#6b7e42]");
