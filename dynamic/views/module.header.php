@@ -79,7 +79,7 @@ $header = '
 
   </ul>
   <a
-    href="result.php?hotel_code=EZtpbg"
+    href="'.BASE_URL.'result.php?hotel_code='.$booking_code.'"
     target="_blank"
     class="hidden lg:inline-block py-2 px-6 bg-[#ef4c23] hover:bg-[#6b7e42] text-sm text-[#f5f5dc] font-bold rounded-lg transition duration-200"
     href="#"
@@ -116,7 +116,7 @@ $header = '
       <div class="pt-6">
         <a
           class="block px-4 py-3 mb-2 leading-loose text-center bg-[#ef4c23] hover:bg-[#6b7e42] text-sm text-[#f5f5dc] font-bold rounded-lg transition duration-200 animate-pulse"
-          href="result.php?hotel_code=EZtpbg"
+          href="'.BASE_URL.'result.php?hotel_code='.$booking_code.'"
           >BOOK NOW</a
         >
       </div>

@@ -100,6 +100,7 @@ $restst = '';
 
 
 $popRec = Popup::get_allpopup(1);
+// pr($popRec);
 if (!empty($popRec)) {
     //modal img
     $count = 1;

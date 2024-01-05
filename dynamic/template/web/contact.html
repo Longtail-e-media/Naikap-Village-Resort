@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Naikap Village Resort - Contact</title>
+    <jcms:site:seotitle/>
+
+    <!-- Fevicon -->
+    <jcms:site:fevicon/>
 
     <link
       rel="apple-touch-icon"
@@ -22,7 +23,7 @@
       sizes="16x16"
       href="./logo/favicon-16x16.png"
     />
-    <link rel="manifest" href="template/web/logo/site.webmanifest" />
+    <link rel="manifest" href='template/web/logo/site.webmanifest' />
     <link rel="stylesheet" href="./css/links.css" />
 
     <script src='https://cdn.tailwindcss.com'></script>
@@ -34,180 +35,8 @@
 
     <jcms:module:contact-bread/>
 
-    <div class="container p-4 mx-auto">
-      <section class="text-center">
-        <div class="py-12 md:px-12">
-          <div class="container mx-auto xl:px-32">
-            <div class="grid items-center lg:grid-cols-2">
-              <div
-                class="relative z-[1] rounded-lg px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] bg-[hsla(0,0%,5%,0.7)] shadow-black/20 md:px-12 lg:-mr-14"
-              >
-                <h2 class="text-3xl font-bold text-[#f5f5dc]">Write to us</h2>
-                <div class="text-center mb-10">
-                  <span
-                    class="inline-block w-1 h-1 rounded-full bg-[#f5f5dc] ml-1"
-                  ></span>
-                  <span
-                    class="inline-block w-3 h-1 rounded-full bg-[#f5f5dc] ml-1"
-                  ></span>
-                  <span
-                    class="inline-block w-40 h-1 rounded-full bg-[#f5f5dc]"
-                  ></span>
-                  <span
-                    class="inline-block w-3 h-1 rounded-full bg-[#f5f5dc] ml-1"
-                  ></span>
-                  <span
-                    class="inline-block w-1 h-1 rounded-full bg-[#f5f5dc] ml-1"
-                  ></span>
-                </div>
-                <form
-                  class="flex items-center justify-center flex-col gap-10"
-                  id="frm_contact"
-                  method="post"
-                  action="enquery_mail.php"
-                >
-                  <div class="mt-5 relative w-full" data-te-input-wrapper-init>
-                    <input
-                      type="text"
-                      name="name"
-                      class="rounded w-full bg-[#f5f5dc]/20 py-2 px-3 leading-[1.6] text-lg outline-none transition-all duration-200 ease-linear text-[#f5f5dc] border-[#f5f5dc] border-b-2 border-dotted"
-                      id=""
-                      required
-                    />
-                    <label
-                      class="pointer-events-none absolute -top-6 left-0 mb-0 origin-[0_0] truncate text-[#f5f5dc]"
-                      for=""
-                      >Full Name<sup>*</sup>
-                    </label>
-                  </div>
-                  <div class="relative w-full" data-te-input-wrapper-init>
-                    <input
-                      type="text"
-                      name="contact"
-                      class="rounded w-full bg-[#f5f5dc]/20 py-2 px-3 leading-[1.6] text-lg outline-none transition-all duration-200 ease-linear text-[#f5f5dc] border-[#f5f5dc] border-b-2 border-dotted"
-                      id=""
-                      required
-                    />
-                    <label
-                      class="pointer-events-none absolute -top-6 left-0 mb-0 origin-[0_0] truncate text-[#f5f5dc]"
-                      >Contact Number<sup>*</sup>
-                    </label>
-                  </div>
-                  <div class="relative w-full" data-te-input-wrapper-init>
-                    <input
-                      type="email"
-                      name="email"
-                      class="rounded w-full bg-[#f5f5dc]/20 py-2 px-3 leading-[1.6] text-lg outline-none transition-all duration-200 ease-linear text-[#f5f5dc] border-[#f5f5dc] border-b-2 border-dotted"
-                      id=""
-                      required
-                    />
-                    <label
-                      class="pointer-events-none absolute -top-6 left-0 mb-0 origin-[0_0] truncate text-[#f5f5dc]"
-                      >Email address<sup>*</sup>
-                    </label>
-                  </div>
-                  <div class="relative w-full" data-te-input-wrapper-init>
-                    <textarea
-                      name="message"
-                      class="rounded w-full bg-[#f5f5dc]/20 py-2 px-3 leading-[1.6] text-lg outline-none transition-all duration-200 ease-linear text-[#f5f5dc] border-[#f5f5dc] border-b-2 border-dotted"
-                      id=""
-                      rows="3"
-                    ></textarea>
-                    <label
-                      for=""
-                      class="pointer-events-none absolute -top-6 left-0 mb-0 origin-[0_0] truncate text-[#f5f5dc]"
-                      >Message</label
-                    >
-                  </div>
-                  <!--<div class="inline-block justify-center pl-[1.5rem] md:flex">-->
-                  <!--  <input-->
-                  <!--    class="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"-->
-                  <!--    type="checkbox"-->
-                  <!--    value=""-->
-                  <!--    id=""-->
-                  <!--    checked-->
-                  <!--  />-->
-                  <!--  <label-->
-                  <!--    class="inline-block pl-[0.15rem] hover:cursor-pointer text-[#f5f5dc]"-->
-                  <!--    for=""-->
-                  <!--  >-->
-                  <!--    I am not a robot-->
-                  <!--  </label>-->
-                  <!--</div>-->
-                  <div
-                    id="g-recaptcha-response"
-                    class="g-recaptcha col-md-8 form-group"
-                    data-sitekey="6LdGEDUpAAAAAFF4vueWfSGbWITXg3NYLrYDqDjS"
-                  ></div>
 
-                  <button
-                    type="submit"
-                    data-te-ripple-init
-                    data-te-ripple-color="light"
-                    class="inline-block w-full rounded bg-primary px-6 py-3 text-lg font-medium uppercase leading-normal bg-gray-800 hover:bg-[#ef4c23] text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-200 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                  >
-                    Send
-                  </button>
-                </form>
-              </div>
-
-              <div class="md:mb-12 lg:mb-0">
-                <div
-                  class="relative h-[800px] rounded-lg shadow-lg dark:shadow-black/20"
-                >
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.3222114931054!2d85.24579017558115!3d27.707336176182608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb22866aaaaaab%3A0xe3bc4269cde04529!2sNaikap%20Village%20Resort!5e0!3m2!1sen!2snp!4v1701945549562!5m2!1sen!2snp"
-                    class="absolute left-0 top-0 h-full w-full rounded-lg"
-                    style="border: 0"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="flex flex-col items-center justify-center gap-5 mt-10">
-        <div
-          class=""
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-        >
-          <h5
-            class="text-center text-xl md:text-4xl font-bold uppercase text-[#f5f5dc]"
-          >
-            Find Us with QR Code
-          </h5>
-          <div class="text-center">
-            <span
-              class="inline-block w-1 h-1 rounded-full bg-[#f5f5dc] ml-1"
-            ></span>
-            <span
-              class="inline-block w-3 h-1 rounded-full bg-[#f5f5dc] ml-1"
-            ></span>
-            <span
-              class="inline-block w-40 h-1 rounded-full bg-[#f5f5dc]"
-            ></span>
-            <span
-              class="inline-block w-3 h-1 rounded-full bg-[#f5f5dc] ml-1"
-            ></span>
-            <span
-              class="inline-block w-1 h-1 rounded-full bg-[#f5f5dc] ml-1"
-            ></span>
-          </div>
-        </div>
-        <div
-          data-aos="fade-left"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-        >
-          <img src="./svg/mapQRcode.svg" alt="QR Code for Google Maps" />
-        </div>
-      </div>
-    </div>
+    <jcms:module:contact-us/>
 
     <jcms:module:footer/>
 
@@ -216,7 +45,7 @@
     <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
 
     <!-- <script async src="./js/app.js"></script> -->
-    <script async defer src=''./js/app.js'></script>
+    <script async defer src="./js/app.js"></script>
 
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 

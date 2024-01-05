@@ -136,6 +136,12 @@ class Features extends DatabaseObject
         return !empty($result_array) ? array_shift($result_array) : false;
     }
 
+    static function get_all_byparntandid($parentId = 0, $id = 0)
+    {
+        global $db;
+        $sql = "SELECT id,title FROM " . self::$table_name . " WHERE parentId=$parentId AND id = $id AND status=1 ORDER BY sortorder DESC";
+        return self::find_by_sql($sql);
+    }
     static function get_all_byparnt($parentId = 0)
     {
         global $db;

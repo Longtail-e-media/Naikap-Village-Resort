@@ -93,38 +93,8 @@ $footer = '
                             <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
                             </h4>
                             <ul class="space-y-3">
-                            <li>
-                                <a
-                                href="javascript:void(0)"
-                                class="inline-block text-base leading-loose text-body-color hover:underline"
-                                >
-                                Terms & Conditions
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                href="javascript:void(0)"
-                                class="inline-block text-base leading-loose text-body-color hover:underline"
-                                >
-                                Privacy Policy
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                href="javascript:void(0)"
-                                class="inline-block text-base leading-loose text-body-color hover:underline"
-                                >
-                                Child Policy
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                href="javascript:void(0)"
-                                class="inline-block text-base leading-loose text-body-color hover:underline"
-                                >
-                                Pet Policy
-                                </a>
-                            </li>
+                            '. $jVars['module:footer-menu']  .'
+                            
                             </ul>
                         </div>
                         </div>

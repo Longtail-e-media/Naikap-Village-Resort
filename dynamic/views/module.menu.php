@@ -175,11 +175,13 @@ $jVars['module:res-menu-responsive'] = $result;
 $resfooter = '';
 $FmenuRec = Menu::getMenuByParent(0, 2);
 if ($FmenuRec):
-    $resfooter .= '<ul class="footer-explore-list list-unstyled">';
+    $resfooter .= '';
 
     foreach ($FmenuRec as $FmenuRow):
+        $classLink = ' inline-block text-base leading-loose text-body-color hover:underline  ';
+
         $resfooter .= '<li>';
-        $resfooter .= getMenuList($FmenuRow->name, $FmenuRow->linksrc, $FmenuRow->linktype, '');
+        $resfooter .= getMenuList($FmenuRow->name, $FmenuRow->linksrc, $FmenuRow->linktype, $classLink );
         $resfooter .= '</li>';
     endforeach;
     $resfooter .= '</ul>';

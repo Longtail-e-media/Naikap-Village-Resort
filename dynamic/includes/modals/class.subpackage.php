@@ -99,6 +99,7 @@ class Subpackage extends DatabaseObject {
 		$sql = "SELECT * FROM ".self::$table_name." WHERE type='$type' $cond2 AND status='1' ORDER BY sortorder DESC $cond ";
 		return self::find_by_sql($sql);
 	}
+	
 
 	public static function getTotalSub($type=''){
 		global $db;

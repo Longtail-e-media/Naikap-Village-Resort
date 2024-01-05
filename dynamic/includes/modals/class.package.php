@@ -2,7 +2,7 @@
 class Package extends DatabaseObject {
 
 	protected static $table_name = "tbl_package";
-	protected static $db_fields = array('id', 'slug', 'image', 'header_image', 'banner_image', 'title', 'sub_title', 'status', 'sortorder', 'detail', 'content', 'meta_title', 'meta_keywords', 'meta_description', 'type', 'added_date', 'modified_date');
+	protected static $db_fields = array('id', 'slug', 'image', 'header_image', 'banner_image', 'title', 'sub_title', 'status', 'sortorder', 'detail', 'content','homepage','homepage_title', 'meta_title', 'meta_keywords', 'meta_description', 'type', 'added_date', 'modified_date');
 	
 	var $id;
 	var $slug;
@@ -19,6 +19,8 @@ class Package extends DatabaseObject {
 	var $meta_keywords;
 	var $meta_description;
 	var $type;
+	var $homepage;
+	var $homepage_title;
 	var $added_date;
 	var $modified_date;
 
@@ -44,6 +46,13 @@ class Package extends DatabaseObject {
 		global $db;
 		$cond = !empty($limit)?' LIMIT '.$limit :'';
 		$sql = "SELECT * FROM ".self::$table_name." WHERE status=1 ORDER BY sortorder DESC $cond";
+		return self::find_by_sql($sql);
+	}
+	
+	public static function get_homePackage($homepage=0,$limit=''){
+		global $db;
+		$cond = !empty($limit)?' LIMIT '.$limit:'';
+		$sql = "SELECT * FROM ".self::$table_name." WHERE homepage='$homepage' AND status='1' ORDER BY sortorder DESC $cond ";
 		return self::find_by_sql($sql);
 	}
 

@@ -36,10 +36,11 @@
 			$Package->sub_title    	= $_REQUEST['sub_title'];	
 			$Package->content   	= $_REQUEST['content'];
 			$Package->type 		= $_REQUEST['type'];	
+			$Package->homepage 		= $_REQUEST['homepage'];	
 			$Package->meta_title		= $_REQUEST['meta_title'];
 			$Package->meta_keywords		= $_REQUEST['meta_keywords'];
 			$Package->meta_description	= $_REQUEST['meta_description'];
-			
+			$Package->header_image			= !empty($_REQUEST['imageArrayname'])?$_REQUEST['imageArrayname']:'';
 			$Package->banner_image	= serialize(array_values(array_filter($_REQUEST['imageArrayname2'])));
 								
 			$Package->status		= $_REQUEST['status'];
@@ -77,13 +78,15 @@
 					exit;		
 				endif;
 			}
-
+			$Package->header_image			= !empty($_REQUEST['imageArrayname'])?$_REQUEST['imageArrayname']:'';
 			$Package->banner_image	= serialize(array_values(array_filter($_REQUEST['imageArrayname2'])));
 			$Package->slug 	   = $_REQUEST['slug'];
 			$Package->title    = $_REQUEST['title'];	
 			$Package->sub_title = $_REQUEST['sub_title'];	
 			$Package->content  = $_REQUEST['content'];	
-			$Package->status   = $_REQUEST['status'];	
+			$Package->status   = $_REQUEST['status'];
+			$Package->homepage 		= $_REQUEST['homepage'];	
+			$Package->homepage_title 		= $_REQUEST['homepage_title'];	
 			$Package->type 		= $_REQUEST['type'];
 			$Package->meta_title		= $_REQUEST['meta_title'];
 			$Package->meta_keywords		= $_REQUEST['meta_keywords'];

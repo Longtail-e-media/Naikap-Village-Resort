@@ -153,46 +153,51 @@ if (defined('FACILITY_PAGE')) {
         foreach ($record as $recRow) {
             if(!empty($recRow->icon)){
                 $facility .= ' 
-                <div class="col-md-2">
-                    <div class="single-facility" >
-                        <span class="' . $recRow->icon . '"></span>
-                        <h5>' . $recRow->title . '</h5>
-                    </div>
+               
+                <div
+                    class="bg-[#f5f5dc] p-8 rounded-lg flex flex-col items-center justify-center transition-all transform duration-150 hover:scale-105 ease-linear shadow-lg hover:shadow-xl border border-gray-300"
+                >
+                    <i class="fas ' . $recRow->icon . ' text-5xl mb-4 text-gray-800"></i>
+                    <h5 class="text-lg font-semibold text-gray-800">
+                    ' . $recRow->title . '
+                    </h5>
                 </div>
                 ';
-            }else{
-
-                $img = unserialize($recRow->image);
-                $file_path = SITE_ROOT . 'images/services/' . $img[0];
-                if (file_exists($file_path) && $img[0] != NULL) {
-                    $imglink = IMAGE_PATH . 'services/' . $img[0];
-                    $facility .= ' 
-
-                            <div class="col-md-2">
-                                <div class="single-facility" >
-                                    <img src="' . $imglink . '" alt = '. $recRow->title .'>
-                                    <h5>' . $recRow->title . '</h5>
-                                </div>
-                            </div>
-                    ';
-                }
             }
+            // else{
+
+            //     $img = unserialize($recRow->image);
+            //     $file_path = SITE_ROOT . 'images/services/' . $img[0];
+            //     if (file_exists($file_path) && $img[0] != NULL) {
+            //         $imglink = IMAGE_PATH . 'services/' . $img[0];
+            //         $facility .= ' 
+
+            //                 <div class="col-md-2">
+            //                     <div class="single-facility" >
+            //                         <img src="' . $imglink . '" alt = '. $recRow->title .'>
+            //                         <h5>' . $recRow->title . '</h5>
+            //                     </div>
+            //                 </div>
+            //         ';
+            //     }
+            // }
         }
     }
 
 
-    $facilitybread='   
-    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="'.IMAGE_PATH.'preference/facilities/'. $siteRegulars->facilities_image.'">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-left caption mt-90">
-                    <h5>Other Services</h5>
-                    <h1>Hotel Facilities</h1>
-                </div>
-            </div>
-        </div>
-    </div>';
 
+    $facilitybread='   
+   
+    <section
+        class="bg-[url(\''.IMAGE_PATH.'preference/facilities/'. $siteRegulars->facilities_image.'\')] w-full h-[60vh] bg-fixed bg-bottom lg:bg-top xl:bg-bottom bg-no-repeat bg-contain xl:bg-cover"
+    >
+        <img
+        src="'.IMAGE_PATH.'preference/facilities/'. $siteRegulars->facilities_image.'"
+        alt="A beautiful night view"
+        class="lg:hidden w-full h-[65vh] object-cover"
+        />
+    </section>
+    ';
 }
 
 $jVars['module:facility-list'] = $facility;

@@ -17,37 +17,34 @@ if (!empty($tstRec)) {
         $restst .= '';
         
         
-        if($tstRow->country){
+        
         $restst .= '
-                        <div class="item">
-                            <span class="quote"><img src="img/quot.png" alt=""></span>
-                            <p>' . strip_tags($tstRow->content) . '</p>
-                            <div class="info">
-                                <div class="author-img"> <img src="' . IMAGE_PATH . 'testimonial/' . $tstRow->image . '" alt=""> </div>
-                                <a href="'. $tstRow->country .'" target="_blank">
-                                    <div class="cont"> <span>'. $rating .'</span>
-                                        <h6>' . $tstRow->name . '</h6> <span>' . $tstRow->via_type . '</span>
-                                    </div>
-                                
-                                </a>
-
-                            </div>
-                        </div>
-                    ';
-        }else{
-            $restst .= '
-            <div class="item">
-                <span class="quote"><img src="img/quot.png" alt=""></span>
-                <p>' . strip_tags($tstRow->content) . '</p>
-                <div class="info">
-                    <div class="author-img"> <img src="' . IMAGE_PATH . 'testimonial/' . $tstRow->image . '" alt=""> </div>
-                    <div class="cont"> <span>'. $rating .'</span>
-                        <h6>' . $tstRow->name . '</h6> <span>' . $tstRow->via_type . '</span>
-                    </div>
+        <li
+              class="glide__slide"
+              data-aos="zoom-out-up"
+              data-aos-delay="200"
+            >
+              <div class="grid grid-cols-1 gap-4">
+                <div class="flex items-center justify-center flex-col">
+                  <img
+                    src=' . IMAGE_PATH . 'testimonial/' . $tstRow->image . '
+                    width="100"
+                    height="100"
+                    role="none"
+                    alt="' . $tstRow->name . '"
+                    loading="lazy"
+                    class="w-24 h-24 rounded-full shadow-lg object-cover"
+                  />
+                  <div class="my-4 text-md font-light text-[#f5f5dc]">
+                  ' . strip_tags($tstRow->content) . '
+                  </div>
+                  <div class="col-span-2 text-[#f5f5dc]/80">- ' . $tstRow->name . '</div>
                 </div>
-            </div>
-            ';
-        }      
+              </div>
+            </li>
+
+                    ';
+             
     }
     $restst .= '';
 }

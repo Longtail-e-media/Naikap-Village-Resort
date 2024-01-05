@@ -129,43 +129,8 @@ if (isset($_GET['page']) && $_GET['page'] == "offers" && isset($_GET['mode']) &&
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-label col-md-2">
-                        <label for="">
-                            Banner Image :
-                        </label>
-                    </div>
 
-                    <?php if (!empty($advInfo->image)): ?>
-                        <div class="col-md-3" id="removeSavedimg1">
-                            <div class="infobox info-bg">
-                                <div class="button-group" data-toggle="buttons">
-                            <span class="float-left">
-                                <?php
-                                if (file_exists(SITE_ROOT . "images/offers/" . $advInfo->image)):
-                                    $filesize = filesize(SITE_ROOT . "images/offers/" . $advInfo->image);
-                                    echo 'Size : ' . getFileFormattedSize($filesize);
-                                endif;
-                                ?>
-                            </span>
-                                    <a class="btn small float-right" href="javascript:void(0);" onclick="deleteSavedOffersimage(1);">
-                                        <i class="glyph-icon icon-trash-o"></i>
-                                    </a>
-                                </div>
-                                <img src="<?php echo IMAGE_PATH . 'offers/thumbnails/' . $advInfo->image; ?>" style="width:100%"/>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                    <div class="form-input col-md-10 uploader1 <?php echo !empty($advInfo->image) ? "hide" : ""; ?>">
-                        <input type="file" name="background_upload" id="background_upload" class="transparent no-shadow">
-                        <label>
-                            <small>Image Dimensions (2000 px X 1667 px)</small>
-                        </label>
-                    </div>
-                    <!-- Upload user image preview -->
-                    <div id="preview_Image"><input type="hidden" name="imageArrayname" value="" class=""/></div>
-                </div>
-                <div class="form-row">
+                <!-- <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
                             List Image :
@@ -177,7 +142,6 @@ if (isset($_GET['page']) && $_GET['page'] == "offers" && isset($_GET['mode']) &&
                             <small>Image Dimensions (270 px X 300 px)</small>
                         </label>
                     </div>
-                    <!-- Upload user image preview -->
                     <div id="preview_Image3"></div>
 
                     <?php if (!empty($advInfo->list_image)): ?>
@@ -203,8 +167,34 @@ if (isset($_GET['page']) && $_GET['page'] == "offers" && isset($_GET['mode']) &&
                         </div>
                     <?php endif; ?>
 
+                </div> -->
+
+                <div class="form-row">
+                    <div class="form-label col-md-2">
+                        <label for="">
+                            Start Date :
+                        </label>
+                    </div>
+                    <div class="form-input col-md-20">
+                        <input placeholder="Start Date" class="col-md-2 validate[required,length[0,200]]" type="text"
+                               name="date1" id="date1"  autocomplete="off"
+                               value="<?php echo !empty($advInfo->date1) ? $advInfo->date1 : ""; ?>">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label col-md-2">
+                        <label for="">
+                            Deadline :
+                        </label>
+                    </div>
+                    <div class="form-input col-md-20">
+                        <input placeholder="Deadline" class="col-md-2 validate[required,length[0,200]]" type="text"
+                               name="date2" id="date2"  autocomplete="off" 
+                               value="<?php echo !empty($advInfo->date2) ? $advInfo->date2 : ""; ?>">
+                    </div>
                 </div>
 
+<!-- 
                 <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
@@ -262,7 +252,7 @@ if (isset($_GET['page']) && $_GET['page'] == "offers" && isset($_GET['mode']) &&
                 </div>
 
                 <div class="form-row dynamic-discount <?php echo !empty($ddiscount) ? $ddiscount : '';
-                echo isset($_GET['id']) ? '' : 'hide'; ?>">
+                    echo isset($_GET['id']) ? '' : 'hide'; ?>">
                     <div class="form-label col-md-2">
                         <label for="">Information :</label>
                     </div>
@@ -314,7 +304,7 @@ if (isset($_GET['page']) && $_GET['page'] == "offers" && isset($_GET['mode']) &&
                             <?php } ?>
                         </table>
                     </div>
-                </div>
+                </div> -->
 
 
                 <!--<div class="form-row">
@@ -329,18 +319,56 @@ if (isset($_GET['page']) && $_GET['page'] == "offers" && isset($_GET['mode']) &&
                     </div>
                 </div>-->
 
-                <!--<div class="form-row">
+
+                <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
-                            Brief :
+                            Banner Image :
+                        </label>
+                    </div>
+
+                    <?php if (!empty($advInfo->image)): ?>
+                        <div class="col-md-3" id="removeSavedimg1">
+                            <div class="infobox info-bg">
+                                <div class="button-group" data-toggle="buttons">
+                            <span class="float-left">
+                                <?php
+                                if (file_exists(SITE_ROOT . "images/offers/" . $advInfo->image)):
+                                    $filesize = filesize(SITE_ROOT . "images/offers/" . $advInfo->image);
+                                    echo 'Size : ' . getFileFormattedSize($filesize);
+                                endif;
+                                ?>
+                            </span>
+                                    <a class="btn small float-right" href="javascript:void(0);" onclick="deleteSavedOffersimage(1);">
+                                        <i class="glyph-icon icon-trash-o"></i>
+                                    </a>
+                                </div>
+                                <img src="<?php echo IMAGE_PATH . 'offers/thumbnails/' . $advInfo->image; ?>" style="width:100%"/>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <div class="form-input col-md-10 uploader1 <?php echo !empty($advInfo->image) ? "hide" : ""; ?>">
+                        <input type="file" name="background_upload" id="background_upload" class="transparent no-shadow">
+                        <label>
+                            <small>Image Dimensions (2000 px X 1667 px)</small>
+                        </label>
+                    </div>
+                    <div id="preview_Image"><input type="hidden" name="imageArrayname" value="" class=""/></div>
+                </div>
+
+                
+                <div class="form-row">
+                    <div class="form-label col-md-2">
+                        <label for="">
+                            Iframe :
                         </label>
                     </div>
                     <div class="form-input col-md-8">
                         <textarea name="brief"><?php echo !empty($advInfo->brief) ? $advInfo->brief : ""; ?></textarea>
                     </div>
-                </div>-->
+                </div>
 
-                <div class="form-row">
+                <!-- <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
                             Content :
@@ -350,7 +378,52 @@ if (isset($_GET['page']) && $_GET['page'] == "offers" && isset($_GET['mode']) &&
                         <textarea name="content" id="content"
                                   class="large-textarea"><?php echo !empty($advInfo->content) ? $advInfo->content : ""; ?></textarea>
                     </div>
+                </div> -->
+
+
+                <div class="form-row add-image <?php echo !empty($imghide) ? $imghide : ''; ?>">
+                    <div class="form-label col-md-2">
+                        <label for="">
+                            Iframe Link Type :
+                        </label>
+                    </div>
+                    <div class="form-checkbox-radio col-md-9">
+                        <input id="" class="custom-radio" type="radio" name="linktype" value="0"
+                               onClick="linkTypeSelect(0);" <?php echo !empty($internal) ? $internal : "checked"; ?>>
+                        <label for="">Internal Link</label>
+                        <input id="" class="custom-radio" type="radio" name="linktype" value="1"
+                               onClick="linkTypeSelect(1);" <?php echo !empty($external) ? $external : ""; ?>>
+                        <label for="">External Link</label>
+                    </div>
                 </div>
+                <div class="form-row add-image <?php echo !empty($imghide) ? $imghide : ''; ?>">
+                    <div class="form-label col-md-2">
+                        <label for="">
+                            Iframe Link :
+                        </label>
+                    </div>
+                    <div class="form-input col-md-8">
+                        <div class="col-md-4" style="padding-left:0px !important;">
+                            <input placeholder="Link" class="" type="text" name="linksrc"
+                                   id="linksrc"
+                                   value="<?php echo !empty($advInfo->linksrc) ? $advInfo->linksrc : ""; ?>">
+                        </div>
+                        <div class="col-md-6" style="padding-left:0px !important;">
+                            <select data-placeholder="Select Link Page" class="col-md-4 chosen-select" id="linkPage">
+                                <option value=""></option>
+                                <?php
+                                $Lpageview = !empty($advInfo->linksrc) ? $advInfo->linksrc : "";
+                                $LinkTypeview = !empty($advInfo->linktype) ? $advInfo->linktype : "";
+                                // Article Page Link
+                                echo Article::get_internal_link($Lpageview, $LinkTypeview);
+                                // Offer Page Link
+                                echo Offers::get_internal_link($Lpageview, $LinkTypeview);
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="form-row">
                     <div class="form-label col-md-2">
@@ -472,7 +545,7 @@ if (isset($_GET['page']) && $_GET['page'] == "offers" && isset($_GET['mode']) &&
         });
         // ]]>
     </script>
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             /************************************ Editor for message *****************************************/
             var base_url = "<?php echo ASSETS_PATH; ?>";
@@ -488,5 +561,5 @@ if (isset($_GET['page']) && $_GET['page'] == "offers" && isset($_GET['mode']) &&
                     ]
             });*/
         });
-    </script>
+    </script> -->
 <?php endif; ?>

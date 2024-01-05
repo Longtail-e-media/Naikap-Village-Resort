@@ -258,4 +258,29 @@
         var dcode = $(this).attr('data-id');
         $('tr.' + dcode).remove();
     });
+    $(document).ready(function () {
+        $('#date1').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: true,
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+    $(document).ready(function () {
+        $('#date2').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: true,
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+    function linkTypeSelect(Re) {
+        if (Re == 0) {
+            $('#linkPage_chosen').removeClass("hide");
+            ($('#linksrc').val() == 'http://www.') ? $('#linksrc').val('') : null;
+        } else {
+            $('#linkPage_chosen').addClass("hide");
+            ($('#linksrc').val() == '') ? $('#linksrc').val("http://www.") : null;
+        }
+    }
 </script>

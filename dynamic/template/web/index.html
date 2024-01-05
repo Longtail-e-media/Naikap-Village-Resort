@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Naikap Village Resort</title>
+    <jcms:site:seotitle/>
+
+    <!-- Fevicon -->
+    <jcms:site:fevicon/>
 
     <link
       rel="apple-touch-icon"
@@ -26,10 +27,10 @@
 
     <link rel="stylesheet" href="./css/links.css" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src='https://cdn.tailwindcss.com'></script>
     <link rel="stylesheet" href="dist/output.css" />
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href='https://unpkg.com/aos@next/dist/aos.css' />
 
     <style>
       html {
@@ -91,160 +92,13 @@
   </script>
 
   <body class="overflow-x-hidden bg-[#6b7e42]">
-
     <jcms:module:header/>
 
-
-
     <!-- ====== Hero Section -->
-    <section data-aos="zoom-out-up" data-aos-delay="200" data-autoplay="">
-      <div id="main-slider" class="owl-carousel owl-theme relative">
-        <div
-          class="relative w-full min-h-[400px] md:min-h-[500px] lg:h-screen bg-[url('././img/IMG_1459.webp')] bg-no-repeat bg-cover bg-center"
-        ></div>
-        <div
-          class="relative w-full min-h-[400px] md:min-h-[500px] lg:h-screen bg-[url('./img/IMG_1390.webp')] bg-no-repeat bg-cover bg-center"
-        ></div>
-        <div
-          class="relative w-full min-h-[400px] md:min-h-[500px] lg:h-screen bg-[url('./img/IMG_1588.webp')] bg-no-repeat bg-cover bg-center"
-        >
-          <div
-            class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
-          ></div>
-        </div>
-
-        <div
-          class="relative w-full min-h-[400px] md:min-h-[500px] lg:h-screen bg-[url('./img/IMG_1541.webp')] bg-no-repeat bg-cover bg-center"
-        >
-          <div
-            class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-3 md:px-4 lg:px-8"
-          ></div>
-        </div>
-      </div>
-      <div
-        class="hidden lg:block absolute top-[25%] -right-8 bg-slate-700 py-5 pl-5 rounded-xl z-[1] w-[450px]"
-      >
-        <div id="slider-thumb" class="owl-carousel owl-theme">
-          <div class="item">
-            <img
-              src="./img/IMG_1459.webp"
-              class="w-64 h-72 object-cover rounded-xl"
-            />
-          </div>
-          <div class="item">
-            <img
-              src="./img/IMG_1390.webp"
-              class="w-64 h-72 object-cover rounded-xl"
-            />
-          </div>
-          <div class="item">
-            <img
-              src="./img/IMG_1588.webp"
-              class="w-64 h-72 object-cover rounded-xl"
-            />
-          </div>
-          <div class="item">
-            <img
-              src="./img/IMG_1541.webp"
-              class="w-64 h-72 object-cover rounded-xl"
-            />
-          </div>
-        </div>
-        <!-- Slider Nav -->
-        <div class="flex flex-row gap-3 pt-4">
-          <button
-            type="button"
-            role="presentation"
-            class="customPrevBtn py-1 px-2 rounded-sm bg-primary text-[#f5f5dc] hover:bg-acent"
-          >
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button
-            type="button"
-            role="presentation"
-            class="customNextBtn py-1 px-2 rounded-sm bg-primary text-[#f5f5dc] hover:bg-acent"
-          >
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-        <!-- End Slider Nav -->
-      </div>
-    </section>
+    <jcms:module:slideshow/>
 
     <!-- ====== About Section -->
-    <section
-      class="container mx-auto flex items-center justify-center p-4 bg-transparent mt-10"
-    >
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div data-aos="fade-right" data-aos-delay="100">
-          <div class="py-2">
-            <h3 class="text-4xl font-bold uppercase text-[#f5f5dc]">
-              About Us
-            </h3>
-            <span class="font-bold text-[#f5f5dc]/80"
-              >Unwind & Relax at Naikap Village Resort</span
-            >
-          </div>
-          <div class="w-1/4 h-1 rounded-full bg-[#f5f5dc]/40"></div>
-          <p
-            class="text-justify text-md md:text-sm lg:text-[1.1rem] xl:text-[1.15rem] mt-5 text-[#f5f5dc]/80 leading-0 md:pr-2"
-          >
-            Welcome to Naikap Village Resort, one of the best luxurious newly
-            built resort located at Purano Naikap, Kathmandu, 15 minutes drive
-            from Kalanki Chowk. It's a hub for entertainment destinations and it
-            quickly connects to the perfect combination of business and pleasure
-            needs.
-            <br />
-            With beautiful rooms, all the modern amenities,a restaurant, terrace
-            dining experience, beautiful garden, we further provide extensive
-            conference and banquet spaces to provide an ideal venue for larger
-            events and meetings.
-          </p>
-          <div class="py-2">
-            <a
-              href="./about.html"
-              class="text-[#f5f5dc] bg-[#ef4c23] hover:bg-gray-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-200 ease-in-out"
-            >
-              Read more
-              <i class="-mr-1 ml-2 h-4 w-4 fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-        <div
-          class="overflow-hidden"
-          data-aos="zoom-in-left"
-          data-aos-delay="200"
-        >
-          <img
-            src="./img/IMG_1392.webp"
-            alt="Beautiful Room"
-            class="w-full h-96 object-cover rounded-md block hover:scale-125 transition-all duration-300 ease-linear"
-          />
-        </div>
-        <div
-          class="overflow-hidden"
-          data-aos="zoom-in-right"
-          data-aos-delay="300"
-        >
-          <img
-            src="./img/IMG_1463.webp"
-            alt="Night sky"
-            class="w-full h-96 object-cover rounded-md block hover:scale-125 transition-all duration-300 ease-linear"
-          />
-        </div>
-        <div
-          class="overflow-hidden"
-          data-aos="zoom-in-left"
-          data-aos-delay="400"
-        >
-          <img
-            src="./img/IMG_1698.webp"
-            alt=""
-            class="w-full h-96 object-cover rounded-md block hover:scale-125 transition-all duration-300 ease-linear"
-          />
-        </div>
-      </div>
-    </section>
+    <jcms:module:home-article/>
 
     <!-- ====== Service Section -->
     <section class="mt-10 container mx-auto">
@@ -263,287 +117,7 @@
       </div>
       <div class="flex items-center justify-center p-4">
         <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div
-            class="shadow-md border border-gray-200 rounded-lg bg-gray-800"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-          >
-            <div class="overflow-hidden">
-              <a href="./rooms.html">
-                <img
-                  class="rounded-t-lg w-full h-96 object-cover block hover:scale-125 transition-all duration-300 ease-linear"
-                  src="./img/IMG_1383.webp"
-                  alt="Rooms"
-                />
-              </a>
-            </div>
-
-            <div class="p-5">
-              <div class="flex items-center justify-between">
-                <a href="./rooms.html">
-                  <p class="font-bold text-[#ef4c23]">Starting USD 30</p>
-                  <h5
-                    class="font-bold text-lg md:text-2xl tracking-tight mb-2 text-[#f5f5dc]"
-                  >
-                    Rooms
-                  </h5>
-                </a>
-                <a
-                  href="./rooms.html"
-                  class="text-[#f5f5dc] bg-[#ef4c23] hover:bg-[#6b7e42] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-200 ease-in-out"
-                >
-                  Read more
-                  <i class="-mr-1 ml-2 h-4 w-4 fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-
-              <div class="flex items-center justify-between py-2 pr-2">
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i
-                    class="hidden md:block fa-solid fa-people-roof text-md"
-                  ></i>
-                  <div>
-                    <p>No. of Rooms</p>
-                    <span>17 rooms</span>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i class="hidden md:block fa-solid fa-maximize text-lg"></i>
-                  <div>
-                    <p>Room Size</p>
-                    <span>300 sq. ft</span>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i class="hidden md:block fa-solid fa-bed text-md"></i>
-                  <div>
-                    <p>Bed</p>
-                    <span>King Size</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="shadow-md border border-gray-200 rounded-lg bg-gray-800"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
-            <div class="overflow-hidden">
-              <a href="./dining.html">
-                <img
-                  class="rounded-t-lg w-full h-96 object-cover block hover:scale-125 transition-all duration-300 ease-linear"
-                  src="./img/IMG_1516.webp"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="p-5">
-              <div class="flex items-center justify-between">
-                <a href="./dining.html">
-                  <p class="font-bold text-[#ef4c23]">Experienced Chef</p>
-                  <h5
-                    class="flex font-bold text-lg md:text-2xl tracking-tight mb-2 text-[#f5f5dc]"
-                  >
-                    Dining &amp; Bar
-                    <!--<img
-                      src="./svg/chef.svg"
-                      alt="Chef"
-                      class="w-8 h-8 object-contain ml-2"
-                    />-->
-                  </h5>
-                </a>
-                <a
-                  href="./dining.html"
-                  class="text-[#f5f5dc] bg-[#ef4c23] hover:bg-[#6b7e42] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-200 ease-in-out"
-                >
-                  Read more
-                  <i class="-mr-1 ml-2 h-4 w-4 fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-
-              <div class="flex items-center justify-between py-2 pr-2">
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i class="fa-solid fa-utensils hidden md:block text-md"></i>
-                  <div>
-                    <p>Opening Time</p>
-                    <span class="hidden md:block">06:00 AM - 11:00 PM</span>
-                    <span class="md:hidden">06 am - 11 pm</span>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i
-                    class="hidden md:block fa-solid fa-people-roof text-md"
-                  ></i>
-                  <div>
-                    <p>Occupancy</p>
-                    <span>50+ people</span>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i class="hidden md:block fa-solid fa-bowl-food text-md"></i>
-                  <div>
-                    <p>Cuisines</p>
-                    <span>Multicuisine</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="shadow-md border border-gray-200 rounded-lg bg-gray-800"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-          >
-            <div class="overflow-hidden">
-              <a href="./hall.html">
-                <img
-                  class="rounded-t-lg w-full h-96 object-cover block hover:scale-125 transition-all duration-300 ease-linear"
-                  src="./img/IMG_1588.webp"
-                  alt="Event Spaces"
-                />
-              </a>
-            </div>
-            <div class="p-5">
-              <div class="flex items-center justify-between">
-                <a href="./hall.html">
-                  <p class="font-bold text-[#ef4c23]">We organize</p>
-                  <h5
-                    class="font-bold text-lg md:text-2xl tracking-tight mb-2 text-[#f5f5dc]"
-                  >
-                    Meeting &amp; Events
-                  </h5>
-                </a>
-                <a
-                  href="./hall.html"
-                  class="text-[#f5f5dc] bg-[#ef4c23] hover:bg-[#6b7e42] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-200 ease-in-out"
-                >
-                  Read more
-                  <i class="-mr-1 ml-2 h-4 w-4 fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-
-              <div class="flex items-center justify-between py-2 pr-2">
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i
-                    class="hidden md:block fa-solid fa-people-roof text-md"
-                  ></i>
-                  <div>
-                    <p>Occupancy</p>
-                    <span>1000 people</span>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i class="hidden md:block fa-solid fa-maximize text-lg"></i>
-                  <div>
-                    <p>Hall size</p>
-                    <span>1000 sq. ft</span>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i
-                    class="hidden md:block fa-solid fa-calendar-days text-md"
-                  ></i>
-                  <div>
-                    <p>Event Types</p>
-                    <span>All</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="shadow-md border border-gray-200 rounded-lg bg-gray-800"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="400"
-          >
-            <div class="overflow-hidden">
-              <a href="./offers.html">
-                <img
-                  class="rounded-t-lg w-full h-96 object-cover block hover:scale-125 transition-all duration-300 ease-linear"
-                  src="https://scontent.fktm7-1.fna.fbcdn.net/v/t39.30808-6/408507492_309603238581479_6899912135280332634_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=3635dc&_nc_ohc=mchAh8nyZIQAX9N2381&_nc_ht=scontent.fktm7-1.fna&oh=00_AfCWtBDNuYocbArZyP94RD7fLSxrQ-V2w7d0FMXWXm8PUw&oe=658178C7"
-                  alt="City view"
-                />
-              </a>
-            </div>
-            <div class="p-5">
-              <div class="flex items-center justify-between">
-                <a href="./offers.html">
-                  <p class="font-bold text-[#ef4c23]">With city view</p>
-                  <h5
-                    class="font-bold text-lg md:text-2xl tracking-tight mb-2 text-[#f5f5dc]"
-                  >
-                    Offers & Packages
-                  </h5>
-                </a>
-                <a
-                  href="./offers.html"
-                  class="text-[#f5f5dc] bg-[#ef4c23] hover:bg-[#6b7e42] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-200 ease-in-out"
-                >
-                  Read more
-                  <i class="-mr-1 ml-2 h-4 w-4 fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-
-              <div class="flex items-center justify-between py-2 pr-2">
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i
-                    class="hidden md:block fa-solid fa-people-group text-md"
-                  ></i>
-                  <div>
-                    <p>We offer</p>
-                    <span>Conference & Meeting</span>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i
-                    class="hidden md:block fa-solid fa-champagne-glasses text-lg"
-                  ></i>
-                  <div>
-                    <p>We offer</p>
-                    <span>Festival Packages</span>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center justify-between gap-4 text-[#f5f5dc] text-sm"
-                >
-                  <i
-                    class="hidden md:block fa-solid fa-people-roof text-md"
-                  ></i>
-                  <div>
-                    <p>We offer</p>
-                    <span>Picnic Packages</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <jcms:module:home-packagelist-service/>
         </div>
       </div>
     </section>
@@ -581,183 +155,36 @@
               data-filter="all"
             >
               All
-            </button>
-            <button
-              class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md"
-              data-filter="room"
-            >
-              Room
-            </button>
-            <button
-              class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md"
-              data-filter="views"
-            >
-              Views
-            </button>
-            <button
-              class="filter-btn block bg-gray-300 text-gray-800 py-2 text-center rounded-md"
-              data-filter="dining"
-            >
-              Dining
-            </button>
+            <jcms:module:galleryHomelist/>
           </div>
         </div>
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           data-aos="fade-up"
-          data-aos-offset="300"
           data-aos-easing="ease-in-sine"
         >
           <!-- Gallery Item 1 -->
-          <a
-            href="./img/IMG_1390.webp"
-            data-fancybox="gallery"
-            data-caption="Room 1"
-            class="gallery-item room overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            data-aos="fade-up"
-          >
-            <img
-              src="./img/IMG_1390.webp"
-              alt="Room 1"
-              class="w-full h-auto all transition-all hover:scale-125 duration-300 ease-linear"
-            />
-          </a>
-          <!-- Gallery Item 2 -->
-          <a
-            href="./img/IMG_1459.webp"
-            data-fancybox="gallery"
-            data-caption="Views 1"
-            class="gallery-item views overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            data-aos="fade-up"
-          >
-            <img
-              src="./img/IMG_1459.webp"
-              alt="Views 1"
-              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-            />
-          </a>
-          <!-- Gallery Item 3 -->
-          <a
-            href="./img/IMG_1541.webp"
-            data-fancybox="gallery"
-            data-caption="Dining 1"
-            class="gallery-item dining overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            data-aos="fade-up"
-          >
-            <img
-              src="./img/IMG_1541.webp"
-              alt="Dining 1"
-              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-            />
-          </a>
-          <!-- Gallery Item 4 -->
-          <a
-            href="./img/IMG_1392.webp"
-            data-fancybox="gallery"
-            data-caption="Room 2"
-            class="gallery-item room overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            data-aos="fade-up"
-          >
-            <img
-              src="./img/IMG_1392.webp"
-              alt="Room 2"
-              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-            />
-          </a>
-
-          <!-- Gallery Item 5 -->
-          <a
-            href="./img/IMG_1708.webp"
-            data-fancybox="gallery"
-            data-caption="Views 2"
-            class="gallery-item views overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            data-aos="fade-up"
-          >
-            <img
-              src="./img/IMG_1708.webp"
-              alt="Views 2"
-              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-            />
-          </a>
-
-          <!-- Gallery Item 6 -->
-          <a
-            href="./img/IMG_1516.webp"
-            data-fancybox="gallery"
-            data-caption="Dining 2"
-            class="gallery-item dining overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            data-aos="fade-up"
-          >
-            <img
-              src="./img/IMG_1516.webp"
-              alt="Dining 2"
-              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-            />
-          </a>
-
-          <!-- Gallery Item 7 -->
-          <a
-            href="./img/IMG_1383.webp"
-            data-fancybox="gallery"
-            data-caption="Room 3"
-            class="gallery-item room overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            data-aos="fade-up"
-          >
-            <img
-              src="./img/IMG_1383.webp"
-              alt="Room 3"
-              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-            />
-          </a>
-
-          <!-- Gallery Item 8 -->
-          <a
-            href="./img/IMG_1498.webp"
-            data-fancybox="gallery"
-            data-caption="Views 3"
-            class="gallery-item views overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            data-aos="fade-up"
-          >
-            <img
-              src="./img/IMG_1498.webp"
-              alt="Views 3"
-              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-            />
-          </a>
-
-          <!-- Gallery Item 9 -->
-          <a
-            href="./img/IMG_1463.webp"
-            data-fancybox="gallery"
-            data-caption="Views 4"
-            class="gallery-item views overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            data-aos="fade-up"
-          >
-            <img
-              src="./img/IMG_1463.webp"
-              alt="Views 4"
-              class="w-full h-auto transform transition-transform hover:scale-125 duration-300 ease-linear"
-            />
-          </a>
+          <jcms:module:galleryHome/>
         </div>
       </div>
     </main>
 
     <!-- ====== Background Section -->
-    <section class="w-screen h-screen fixed">
+    <!-- <section class="w-[100vw] h-64 lg:h-[100vh] bg-red-600">
       <iframe
-        src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FNaikaphospitality%2Fvideos%2F235378572891538%2F&show_text=false&width=560&t=0"
         width="100%"
         height="100%"
-        style="border: none; overflow: hidden"
-        scrolling="no"
+        src="https://www.youtube.com/embed/V33Xg0PbZcM?si=I3_KmYiGfgGsQSB8"
+        title="YouTube video player"
         frameborder="0"
-        allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        muted="true"
+        playsinline="true"
         data-autoplay="true"
         allowfullscreen="true"
       ></iframe>
-    </section>
+    </section> -->
+    <jcms:module:home-video/>
 
     <!-- ====== Testimonials Section -->
     <section class="container mx-auto p-4">
@@ -780,196 +207,7 @@
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             <!-- Testimonial 1 -->
-            <li
-              class="glide__slide"
-              data-aos="zoom-out-up"
-              data-aos-delay="200"
-            >
-              <div class="grid grid-cols-1 gap-4">
-                <div class="flex items-center justify-center flex-col">
-                  <img
-                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/78/a6/10/louise-w.jpg?w=100&amp;h=-1&amp;s=1"
-                    width="100"
-                    height="100"
-                    role="none"
-                    alt="Lou W"
-                    loading="lazy"
-                    class="w-24 h-24 rounded-full shadow-lg object-cover"
-                  />
-                  <div class="my-4 text-md font-light text-[#f5f5dc]">
-                    "A welcome escape from hectic Kathmandu I have been lucky
-                    enough to stay at Naikap Resort twice now and every visit
-                    has been a perfectly welcome escape from the hectic-ness of
-                    Kathmandu. Wake up early so you can see the most stunning
-                    views of the whole of Kathmandu/ mountain ranges - it'll be
-                    worth it! Although the hotel is yet to be completed (looking
-                    forward to seeing the swimming pool when it's complete!), so
-                    far so good. The staff are great, in particular the manager
-                    Bishal who speaks perfect English and has great customer
-                    service skills. Naikap certainly won't let you down!"
-                  </div>
-                  <div class="col-span-2 text-[#f5f5dc]/80">- Lou W</div>
-                </div>
-              </div>
-            </li>
-            <!-- Testimonial 2 -->
-            <li
-              class="glide__slide"
-              data-aos="zoom-out-up"
-              data-aos-delay="200"
-            >
-              <div class="grid grid-cols-1 gap-4">
-                <div class="flex items-center justify-center flex-col">
-                  <img
-                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/f6/6a/29/muna-d.jpg?w=100&amp;h=-1&amp;s=1"
-                    width="100"
-                    height="100"
-                    role="none"
-                    alt="moon5192"
-                    loading="lazy"
-                    class="w-24 h-24 rounded-full shadow-lg object-cover"
-                  />
-                  <div class="my-4 text-md font-light text-[#f5f5dc]">
-                    ""Amidst all the chaos, there is somewhere peaceful to be in
-                    Kathmandu" Been here couple of times before shifting to New
-                    Zealand.....the scenes from here are truly awesome.. I loved
-                    the morning Kathmandu view....it is very difficult to find
-                    such a naturally beautiful and peaceful place within
-                    Kathmandu..Therefore the resort is best place to go to see
-                    the true naturally beauty of Kathmandu and to spend some
-                    time away from the crowd of the city.. the gumba nearby is
-                    awesome too .. and a morning trek to the upper regions of
-                    naikap is most recommended.. It is a great option for
-                    parties..the staff were very lovely and the service is
-                    great.."
-                  </div>
-                  <div class="col-span-2 text-[#f5f5dc]/80">- MOON5192</div>
-                </div>
-              </div>
-            </li>
-
-            <!-- Testimonial 3 -->
-            <li
-              class="glide__slide"
-              data-aos="zoom-out-up"
-              data-aos-delay="200"
-            >
-              <div class="grid grid-cols-1 gap-4">
-                <div class="flex items-center justify-center flex-col">
-                  <img
-                    srcset="
-                      https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/f6/11/e6/jeebpandey.jpg?w=100&amp;h=-1&amp;s=1 1x,
-                      https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/f6/11/e6/jeebpandey.jpg?w=200&amp;h=-1&amp;s=1 2x
-                    "
-                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/f6/11/e6/jeebpandey.jpg?w=100&amp;h=-1&amp;s=1"
-                    width="100"
-                    height="75"
-                    role="none"
-                    alt="JeebPandey"
-                    loading="lazy"
-                    class="w-24 h-24 rounded-full shadow-lg object-cover"
-                  />
-                  <div class="my-4 text-md font-light text-[#f5f5dc]">
-                    "Very Friendly hotel We stayed 2 nights here when we were in
-                    Nepal for a short break. I was there for a business meeting.
-                    Very friendly staff, nice clean room, and very good food at
-                    the restaurant there. I am looking forward to my next
-                    visit."
-                  </div>
-                  <div class="col-span-2 text-[#f5f5dc]/80">- JEEBPANDEY</div>
-                </div>
-              </div>
-            </li>
-            <!-- Testimonial 4 -->
-            <li
-              class="glide__slide"
-              data-aos="zoom-out-up"
-              data-aos-delay="200"
-            >
-              <div class="grid grid-cols-1 gap-4">
-                <div class="flex items-center justify-center flex-col">
-                  <img
-                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/f3/e4/default-avatar-2020-30.jpg?w=100&amp;h=-1&amp;s=1"
-                    width="100"
-                    height="100"
-                    role="none"
-                    alt="Nick T"
-                    loading="lazy"
-                    class="w-24 h-24 rounded-full shadow-lg object-cover"
-                  />
-                  <div class="my-4 text-md font-light text-[#f5f5dc]">
-                    "Awesome place to be in kathmandu we went to this place
-                    after getting the recommendation. would love to say one of
-                    the best place to stay in kathmandu. situated in the lap of
-                    hill with fresh air and city chaos. very peace and
-                    relaxing."
-                  </div>
-                  <div class="col-span-2 text-[#f5f5dc]/80">- NICK T</div>
-                </div>
-              </div>
-            </li>
-
-            <!-- Testimonial 5 -->
-            <li
-              class="glide__slide"
-              data-aos="zoom-out-up"
-              data-aos-delay="200"
-            >
-              <div class="grid grid-cols-1 gap-4">
-                <div class="flex items-center justify-center flex-col">
-                  <img
-                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/f2/11/default-avatar-2020-23.jpg?w=100&amp;h=-1&amp;s=1"
-                    width="100"
-                    height="100"
-                    role="none"
-                    alt="kalekrishna"
-                    loading="lazy"
-                    class="w-24 h-24 rounded-full shadow-lg object-cover"
-                  />
-                  <div class="my-4 text-md font-light text-[#f5f5dc]">
-                    "Definite Destination One of the best resorts in the
-                    kathmandu valley. Amazing view, lovely garden, really nice
-                    area, and perfect Service! Thanks to the staffs of Naikap
-                    valley resort for making our holiday so memorable... we had
-                    a fabulous stay. We would definitely like to return and
-                    enjoy the mesmerizing moment as soon as possible."
-                  </div>
-                  <div class="col-span-2 text-[#f5f5dc]/80">- KALEKRISHNA</div>
-                </div>
-              </div>
-            </li>
-            <!-- Testimonial 6 -->
-            <li
-              class="glide__slide"
-              data-aos="zoom-out-up"
-              data-aos-delay="200"
-            >
-              <div class="grid grid-cols-1 gap-4">
-                <div class="flex items-center justify-center flex-col">
-                  <img
-                    srcset="
-                      https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/97/e6/51/everestdine.jpg?w=100&amp;h=-1&amp;s=1 1x,
-                      https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/97/e6/51/everestdine.jpg?w=200&amp;h=-1&amp;s=1 2x
-                    "
-                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/97/e6/51/everestdine.jpg?w=100&amp;h=-1&amp;s=1"
-                    width="100"
-                    height="43"
-                    role="none"
-                    alt="everestdine"
-                    loading="lazy"
-                    class="w-24 h-24 rounded-full shadow-lg object-cover"
-                  />
-                  <div class="my-4 text-md font-light text-[#f5f5dc]">
-                    "Me and my wife visited in this resort on 5th of jan 2015.
-                    We had really great time there. The restaurant there served
-                    exceptional food and the service was excellent. All this
-                    within a great, natural atmosphere!! Great value! We are
-                    looking forward to see you again soon, highly recommended!"
-                  </div>
-                  <div class="col-span-2 text-[#f5f5dc]/80">- EVERESTDINE</div>
-                </div>
-              </div>
-            </li>
+           <jcms:module:testimonialList123/>
           </ul>
         </div>
 
@@ -994,30 +232,31 @@
 
     <jcms:module:footer/>
     
-    <div
+
+    <!-- <div
       id="whatsapp-icon"
       class="fixed right-5 bottom-24 z-[99] w-16 h-16 rounded-full bg-white shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-150 ease-in-out"
     >
       <a href="" class="transform transition-transform scale-110"
         ><i class="fa-brands fa-whatsapp text-[2.5rem] text-green-600"></i
       ></a>
-    </div>
+    </div> -->
     <!-- Messenger Chat plugin Code -->
     <div id="fb-root"></div>
 
     <!-- Your Chat plugin code -->
     <div id="fb-customer-chat" class="fb-customerchat"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
     <!-- hero section -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
     <!-- gallery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js'></script>
     <!-- testimonials carousel -->
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script src='https://cdn.jsdelivr.net/npm/@glidejs/glide'></script>
 
     <!-- aos animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
 
     <script src="./js/hero.js"></script>
     <script src="./js/gallery.js"></script>
@@ -1045,5 +284,6 @@
       // Attach the toggle function to the scroll event
       document.addEventListener("scroll", toggleWhatsAppIcon);
     </script>
+  
   </body>
 </html>

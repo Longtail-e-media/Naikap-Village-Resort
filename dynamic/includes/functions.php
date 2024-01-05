@@ -807,7 +807,7 @@ function get_youtube_thumbnail($url)
 {
 	$parse = parse_url($url);
 	if(!empty($parse['query'])) {
-	preg_match("/v=([^&]+)/i", $url, $matches);
+	preg_match("/v=([^&]+)/i", $url, $matches);	
 	$id = $matches[1];
 	} else {
 	//to get basename
@@ -924,7 +924,8 @@ function get_vimeo_thumbnail($url)
 function getMyvideo($v_url='',$v_type=''){
 	$v_url = check_url($v_url);
     $html = file_get_contents_curl($v_url);
-
+	$description= "";
+	
     if($html){
     	//parsing begins here:
 	    $doc = new DOMDocument();

@@ -14,7 +14,7 @@ foreach($imageNameArr as $key=>$val):?>
                 <i class="glyph-icon icon-clock-os"></i>
             </span>
         </a>
-        <input type="hidden" name="header_image" value="<?php echo $val;?>" class="validate[required,length[0,250]]" />        
+        <input type="hidden" name="imageArrayname" value="<?php echo $val;?>" class="validate[required,length[0,250]]" />        
     </div> 
 </div>
 <?php endforeach; endif;  

@@ -18,18 +18,24 @@
 			$record->slug 			= create_slug($_REQUEST['title']);
 			$record->title 			= $_REQUEST['title'];
 			$record->image			= (!empty($_REQUEST['imageArrayname']))?$_REQUEST['imageArrayname']:'';
-			$record->list_image 	= (!empty($_REQUEST['imageArrayname3']))?$_REQUEST['imageArrayname3']:'';
-			$record->rate			= $_REQUEST['rate'];
-            $record->discount		= $_REQUEST['discount'];
-//			$record->brief			= $_REQUEST['brief'];
-			$record->content		= $_REQUEST['content'];
-			$record->adults		    = $_REQUEST['adults'];
+			// $record->list_image 	= (!empty($_REQUEST['imageArrayname3']))?$_REQUEST['imageArrayname3']:'';
+			// $record->rate			= $_REQUEST['rate'];
+            // $record->discount		= $_REQUEST['discount'];
+			$record->brief			= $_REQUEST['brief'];
+			// $record->content		= $_REQUEST['content'];
+			// $record->adults		    = $_REQUEST['adults'];
 //			$record->children		= $_REQUEST['children'];
-            $record->type 		= $_REQUEST['type'];
+            // $record->type 		= $_REQUEST['type'];
 			$record->status			= $_REQUEST['status'];
 
 			$record->sortorder		= Offers::find_maximum();
 			$record->added_date 	= registered();
+
+			$record->linksrc 	= $_REQUEST['linksrc'];
+			$record->linktype 	= $_REQUEST['linktype'];
+
+			$record->date1 	= $_REQUEST['date1'];
+			$record->date2 	= $_REQUEST['date2'];
 
 			$checkDupliName=Offers::checkDupliName($record->title);
 			if($checkDupliName):
@@ -77,38 +83,44 @@
 
 			$record->slug 			= create_slug($_REQUEST['title']);
 			$record->title 			= $_REQUEST['title'];
-			$record->rate			= $_REQUEST['rate'];
-			$record->discount		= $_REQUEST['discount'];
-//			$record->brief			= $_REQUEST['brief'];
-			$record->content		= $_REQUEST['content'];
-            $record->adults		    = $_REQUEST['adults'];
+			// $record->rate			= $_REQUEST['rate'];
+			// $record->discount		= $_REQUEST['discount'];
+			$record->brief			= $_REQUEST['brief'];
+			// $record->content		= $_REQUEST['content'];
+            // $record->adults		    = $_REQUEST['adults'];
 //            $record->children		= $_REQUEST['children'];
-            $record->type 		= $_REQUEST['type'];
+            // $record->type 		= $_REQUEST['type'];
 			$record->status			= $_REQUEST['status'];
 
-			if(!empty($_REQUEST['imageArrayname3'])):
-				$record->list_image	= $_REQUEST['imageArrayname3'];
-			endif;
+			$record->linksrc 	= $_REQUEST['linksrc'];
+			$record->linktype 	= $_REQUEST['linktype'];
+
+			$record->date1 	= $_REQUEST['date1'];
+			$record->date2 	= $_REQUEST['date2'];
+
+			// if(!empty($_REQUEST['imageArrayname3'])):
+			// 	$record->list_image	= $_REQUEST['imageArrayname3'];
+			// endif;
 
 			if(!empty($_REQUEST['imageArrayname'])):
 				$record->image		= $_REQUEST['imageArrayname'];
 			endif;
 
-            foreach ($_POST as $kk => $vv) { $$kk = $vv; }
-            $pEdit = false;
-            if (!empty($offer_pax) and $type==0) {
-                $i = 1;
-                $db->query("DELETE FROM tbl_offer_child WHERE offer_id = $record->id ");
-                foreach ($offer_pax as $k => $row) {
-                    $csql = "INSERT INTO tbl_offer_child SET offer_id='" . $record->id . "', offer_pax='" . $offer_pax[$k] . "', offer_usd='" . $offer_usd[$k] . "', offer_no='" . $i . "' ";
-                    $db->query($csql);
-                    $i++;
-                }
-                $pEdit = true;
-            }else{
-                $db->query("DELETE FROM tbl_offer_child WHERE offer_id = $record->id ");
-                $pEdit = true;
-            }
+            // foreach ($_POST as $kk => $vv) { $$kk = $vv; }
+            // $pEdit = false;
+            // if (!empty($offer_pax) and $type==0) {
+            //     $i = 1;
+            //     $db->query("DELETE FROM tbl_offer_child WHERE offer_id = $record->id ");
+            //     foreach ($offer_pax as $k => $row) {
+            //         $csql = "INSERT INTO tbl_offer_child SET offer_id='" . $record->id . "', offer_pax='" . $offer_pax[$k] . "', offer_usd='" . $offer_usd[$k] . "', offer_no='" . $i . "' ";
+            //         $db->query($csql);
+            //         $i++;
+            //     }
+            //     $pEdit = true;
+            // }else{
+            //     $db->query("DELETE FROM tbl_offer_child WHERE offer_id = $record->id ");
+            //     $pEdit = true;
+            // }
 
 			$db->begin();
 			if($record->save() OR $pEdit): $db->commit();

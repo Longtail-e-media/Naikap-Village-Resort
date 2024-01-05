@@ -170,7 +170,7 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                     </div>
                 </div>
 
-                <!-- <div class="form-row add-image">
+                <div class="form-row add-image">
                     <div class="form-label col-md-2">
                         <label for="">
                             Banner Image :
@@ -183,9 +183,9 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                         </label>
                     </div>
                     <div id="preview_Image2"></div>
-                </div> -->
+                </div>
 
-                <!-- <div class="form-row">
+                <div class="form-row">
                     <?php
                     if (!empty($subpackageInfo->image2)):
                         $imageRow2 = $subpackageInfo->image2; ?>
@@ -212,7 +212,7 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                             </div>
                         </div>
                     <?php endif; ?>
-                </div> -->
+                </div>
 
                 <?php $pkg = Package::find_by_id($pid); ?>
                 <div class="form-row add-image">
@@ -316,37 +316,37 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                                    value="<?php echo !empty($subpackageInfo->onep_price) ? $subpackageInfo->onep_price : ''; ?>">
                         </div>
                     </div>
-                     <!-- <div class="form-row">
+                     <div class="form-row">
                         <div class="form-label col-md-2">
-                            <label for=""> Double Occupancy :</label>
+                            <label for=""> Occupancy :</label>
                         </div>
                         <div class="form-input col-md-6">
-                            <input placeholder="Occupancy Price" class="col-md-3 validate[length[0,3]]" type="text"
+                            <input placeholder="Occupancy" class="col-md-3 validate[length[0,3]]" type="text"
                                    name="twop_price" id="room_price2"
-                                   value="<?php //echo !empty($subpackageInfo->twop_price) ? $subpackageInfo->twop_price : ''; ?>">
+                                   value="<?php echo !empty($subpackageInfo->twop_price) ? $subpackageInfo->twop_price : ''; ?>">
                         </div>
-                    </div> -->
-                    <!-- <div class="form-row">
+                    </div>
+                    <div class="form-row">
                         <div class="form-label col-md-2">
-                            <label for="">Extra Bed Charge:</label>
+                            <label for="">size:</label>
                         </div>
                         <div class="form-input col-md-6">
-                            <input placeholder="Charge" class="col-md-3 validate[length[0,3]]" type="text"
-                                   name="threep_price" id="room_price3"
-                                   value="<?php //echo !empty($subpackageInfo->threep_price) ? $subpackageInfo->threep_price : ''; ?>">
+                            <input placeholder="Sq.ft" class="col-md-3 validate[length[0,3]]" type="text"
+                                   name="size" id="size"
+                                   value="<?php echo !empty($subpackageInfo->size) ? $subpackageInfo->size : ''; ?>">
                         </div>
-                    </div> -->
+                    </div>
                    
-                    <!-- <div class="form-row">
+                    <div class="form-row">
                         <div class="form-label col-md-2">
                             <label for="">No. of Room :</label>
                         </div>
                         <div class="form-input col-md-6">
                             <input placeholder="No of Room" class="col-md-3" type="text" name="number_room"
                                    id="number_room"
-                                   value="<?php //echo !empty($subpackageInfo->number_room) ? $subpackageInfo->number_room : ''; ?>">
+                                   value="<?php echo !empty($subpackageInfo->number_room) ? $subpackageInfo->number_room : ''; ?>">
                         </div>
-                    </div> -->
+                    </div>
 
                     <style type="text/css">
                         .list {
@@ -371,7 +371,8 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                     <!-- Feature Listing -->
                     <?php $svfr = !empty($subpackageInfo->feature) ? $subpackageInfo->feature : '';
                     $saveRec = unserialize($svfr);
-                    $RecFearures = Features::get_all_byparnt(0);
+                    $RecFearures = Features::get_all_byparntandid(0,134);
+           
                     $items = 1;
                     if ($RecFearures) {
                         foreach ($RecFearures as $recRow) { ?>
@@ -472,7 +473,7 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                     <!-- Feature Listing -->
                     <?php $svfr = !empty($subpackageInfo->feature) ? $subpackageInfo->feature : '';
                     $saveRec = unserialize($svfr);
-                    $RecFearures = Features::get_all_byparnt(0);
+                    $RecFearures = Features::get_all_byparntandid(0,147);
                     $items = 1;
                     if ($RecFearures) {
                         foreach ($RecFearures as $recRow) { ?>
@@ -569,8 +570,96 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                     </div>
 
                 <?php } ?>
+                <?php if ($pkg->id == 3) { ?>
 
-                <?php if (($pkg->id != 2) && ($pkg->id != 1)) { ?>
+<!-- Feature Listing -->
+<?php $svfr = !empty($subpackageInfo->feature) ? $subpackageInfo->feature : '';
+$saveRec = unserialize($svfr);
+$RecFearures = Features::get_all_byparntandid(0,148);
+$items = 1;
+if ($RecFearures) {
+    foreach ($RecFearures as $recRow) { ?>
+        <div class="form-row">
+            <div class="form-label col-md-2">
+                <label for="">
+                    <?php echo $recRow->title; ?> :
+                </label>
+            </div>
+            <div class="form-checkbox-radio col-md-10 form-input">
+                <input type="text" placeholder="Title" class="col-md-4 validate[length[0,250]]"
+                       name="fparent[<?php echo $recRow->id; ?>][]"
+                       value="<?php echo !empty($saveRec[$recRow->id][0][0]) ? $saveRec[$recRow->id][0][0] : ''; ?>">
+                <div class="clear"></div>
+                <script>
+                    $(document).ready(function () {
+                        $("#items<?php echo $items;?>").sortable();
+                    });
+                </script>
+                <ul id="items<?php echo $items; ?>" class="items">
+                    <?php $childRec = Features::get_all_byparnt($recRow->id);
+                    $checked = $unchecked = array();
+                    $i = 1;
+                    if (!empty($saveRec)) {
+                        //separating the checked ones in order they are saved in db
+                        if (!empty($saveRec[$recRow->id][1])) {
+                            foreach ($saveRec[$recRow->id][1] as $saved) {
+                                for ($i = 0; $i < sizeof($childRec); $i++) {
+                                    if ($saved == $childRec[$i]->id) {
+                                        $checked[] = [$childRec[$i]->id, $childRec[$i]->title];
+                                    }
+                                }
+                            }
+                        }
+                        //separating the unchecked ones
+                        foreach ($childRec as $childRow) {
+                            if (!empty($saveRec[$recRow->id][1])) {
+                                $unchecked[] = (in_array($childRow->id, $saveRec[$recRow->id][1])) ? '' : [$childRow->id, $childRow->title];
+                            }else{
+                                $unchecked[] = [$childRow->id, $childRow->title];
+                            }
+                        }
+                    } else {
+                        foreach ($childRec as $childRow) {
+                            $unchecked[] = [$childRow->id, $childRow->title];
+                        }
+                    }
+                    foreach ($checked as $checkd) { ?>
+                        <li class="list">
+                            <input type="checkbox" class="custom-radio"
+                                   name="feature[<?php echo $recRow->id; ?>][]"
+                                   value="<?php echo $checkd[0]; ?>" checked="checked">
+                            <label for=""><?php echo $checkd[1]; ?></label>
+                        </li>
+                    <?php 
+                    echo ($i % 4 == 0) ? '<div class="clear"></div>' : '';
+                    $i++;
+                    }
+                    foreach ($unchecked as $uncheckd) {
+                        if (!empty($uncheckd)) { ?>
+                            <li class="list">
+                                <input type="checkbox" class="custom-radio"
+                                       name="feature[<?php echo $recRow->id; ?>][]"
+                                       value="<?php echo $uncheckd[0]; ?>">
+                                <label for=""><?php echo $uncheckd[1]; ?></label>
+                            </li>
+                        <?php }
+                    echo ($i % 4 == 0) ? '<div class="clear"></div>' : '';
+                    $i++;
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+        <?php $items++;
+    }
+
+} ?>
+
+
+
+<?php } ?>
+
+                <?php  if ($pkg->id < 3) { ?>
                     
                     <!-- Feature Listing -->
                     <?php $svfr = !empty($subpackageInfo->feature) ? $subpackageInfo->feature : '';

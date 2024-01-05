@@ -18,9 +18,9 @@ class Video extends DatabaseObject {
 	public $added_date;
 	
 	// Get all the published videos
-	public static function getVideos($total=1000){
+	public static function getVideos($total=1){
 		global $db;
-		return self::find_by_sql("SELECT * FROM ".self::$table_name." WHERE published=1 ORDER BY sortorder DESC LIMIT {$total}");
+		return self::find_by_sql("SELECT * FROM ".self::$table_name." WHERE status=1 ORDER BY sortorder DESC LIMIT {$total}");
 	}
 	
 	// get all news getAllNews <pagination>

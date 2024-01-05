@@ -10,6 +10,9 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
 
     SerclearImages($moduleTablename, "package/banner", "banner_image");
     SerclearImages($moduleTablename, "package/banner/thumbnails", "banner_image");
+
+    clearImages($moduleTablename, "package/imgheader", "header_image");
+    clearImages($moduleTablename, "package/imgheader/thumbnails", "header_image");
     ?>
     <h3>
         List Packages
@@ -111,8 +114,12 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
         $packageInfo = Package::find_by_id($packageId);
         $status = ($packageInfo->status == 1) ? "checked" : " ";
         $unstatus = ($packageInfo->status == 0) ? "checked" : " ";
+        $hall = ($packageInfo->type == 3) ? "checked" : " ";
+        $dinning = ($packageInfo->type == 2) ? "checked" : " ";
         $masrom = ($packageInfo->type == 1) ? "checked" : " ";
         $unmasrom = ($packageInfo->type == 0) ? "checked" : " ";
+        $homepage = ($packageInfo->homepage == 1) ? "checked" : " ";
+        $unhomepage = ($packageInfo->homepage == 0) ? "checked" : " ";
     endif;
     ?>
     <h3>
@@ -152,6 +159,18 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                         <input placeholder="Package Sub Title" class="col-md-6 validate[required,length[0,200]]" type="text"
                                name="sub_title" id="sub_title"
                                value="<?php echo !empty($packageInfo->sub_title) ? $packageInfo->sub_title : ""; ?>">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label col-md-2">
+                        <label for="">
+                            Homepage details :
+                        </label>
+                    </div>
+                    <div class="form-input col-md-20">
+                        <input placeholder="Homepage details" class="col-md-6 validate[required,length[0,200]]" type="text"
+                               name="homepage_title" id="homepage_title"
+                               value="<?php echo !empty($packageInfo->homepage_title) ? $packageInfo->homepage_title : ""; ?>">
                     </div>
                 </div>
                 <div class="form-row">
@@ -216,6 +235,55 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                     endif; ?>
                 </div>
 
+                <div class="form-row add-image">
+                    <div class="form-label col-md-2">
+                        <label for="">
+                            Header Image :
+                        </label>
+                    </div>
+                    <div class="form-input col-md-10 uploader">
+                        <input type="file" name="header_upload" id="header_upload" class="transparent no-shadow">
+                        <label>
+                            <small>Image Dimensions (1600 px X 600 px)</small>
+                        </label>
+                    </div>
+                    <!-- Upload user image preview -->
+                    <div id="preview_himage"><input type="hidden" name="imageArrayname"/></div>
+                </div>
+
+                <div class="form-row">
+                    <?php
+                    if (!empty($packageInfo->header_image)):
+                        $imageRec = $packageInfo->header_image;
+                        if ($imageRec):
+                            // foreach ($imageRec as $k => $imageRow): ?>
+                                <div class="col-md-3" id="removeSavedimg<?php echo $packageInfo->id; ?>">
+                                    <div class="infobox info-bg">
+                                        <div class="button-group" data-toggle="buttons">
+                                    <span class="float-left">
+                                        <?php
+                                        if (file_exists(SITE_ROOT . "images/package/imgheader/" . $imageRec)):
+                                            $filesize = filesize(SITE_ROOT . "images/package/imgheader/" . $imageRec);
+                                            echo 'Size : ' . getFileFormattedSize($filesize);
+                                        endif;
+                                        ?>
+                                    </span>
+                                            <a class="btn small float-right" href="javascript:void(0);"
+                                               onclick="deleteSavedPackageimage(<?php echo $packageInfo->id; ?>);">
+                                                <i class="glyph-icon icon-trash-o"></i>
+                                            </a>
+                                        </div>
+                                        <img src="<?php echo IMAGE_PATH . 'package/imgheader/thumbnails/' . $imageRec; ?>"
+                                             style="width:100%"/>
+                                        <input type="hidden" name="imageArrayname" value="<?php echo $imageRec; ?>"/>
+
+                                    </div>
+                                </div>
+                            <?php //endforeach;
+                        endif;
+                    endif; ?>
+                </div>
+
                 <!--<div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
@@ -245,16 +313,38 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                 <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
-                            Make as Room :
+                            Package Type :
                         </label>
                     </div>
                     <div class="form-checkbox-radio col-md-9">
                         <input type="radio" class="custom-radio" name="type" id="check1"
                                value="1" <?php echo !empty($masrom) ? $masrom : ""; ?>>
-                        <label for="">Yes</label>
+                        <label for="">Room</label>
+                        <input type="radio" class="custom-radio" name="type" id="check2"
+                               value="2" <?php echo !empty($dinning) ? $dinning : ""; ?>>
+                        <label for="">Dinning</label>
+                        <input type="radio" class="custom-radio" name="type" id="check3"
+                               value="3" <?php echo !empty($hall) ? $hall : "checked"; ?>>
+                        <label for="">Hall</label>
                         <input type="radio" class="custom-radio" name="type" id="check0"
                                value="0" <?php echo !empty($unmasrom) ? $unmasrom : "checked"; ?>>
-                        <label for="">No</label>
+                        <label for="">Default</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-label col-md-2">
+                        <label for="">
+                            Show in homepage :
+                        </label>
+                    </div>
+                    <div class="form-checkbox-radio col-md-9">
+                        <input type="radio" class="custom-radio" name="homepage" id="check1"
+                               value="1" <?php echo !empty($homepage) ? $homepage : " checked"; ?>>
+                        <label for="">Show</label>
+                        <input type="radio" class="custom-radio" name="homepage" id="check0"
+                               value="0" <?php echo !empty($unhomepage) ? $unhomepage : ""; ?>>
+                        <label for="">Dont show</label>
                     </div>
                 </div>
 
